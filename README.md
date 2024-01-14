@@ -9,4 +9,11 @@ The components of project are ES8266 microcontroller, Keypad, RGB Led light, Jum
 Child safety gadget 2.0, brings camera feature to the device where it will take a picture and sends the picture to Google drive when someone comes near the device. An IR sensor is used for this, as the child enters the password the IR sensor which is placed near the device will get activated and will send the picture to parents Google drive. 
 The components used in this project are ESP32CAM, IR sensor, FTDI232 (only while uploading the code), Jumper wires and Breadboard.
 
+### Selection of Board in Arduino IDE
 ![Selected NodeMCU 1.0 in Arduino IDE under board tab](image.png)
+
+### Connection of wires between Keypad & ESP8266
+ROW0-->D0, ROW1-->D1, ROW2-->NOT USED, ROW3-->D2
+COL0-->D3, COL1-->D4, COL4-->D5
+![Keypad](To_Keypad.jpeg)
+![ESP8266](To_ESP8266.jpeg)
