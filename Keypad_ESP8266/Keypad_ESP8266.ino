@@ -8,13 +8,17 @@ char keys[ROWS][COLS] = {
 
   {'*','0','#'}
 };
-byte rowPins[ROWS] = {D0, D1, D2}; // Connect keypad ROW0, ROW1 and ROW3 to these pins.
-byte colPins[COLS] = {D3, D4, D5}; // Connect keypad COL0, COL1 and COL2 to these pins.
+byte rowPins[ROWS] = {D0, D1, D2}; // Connect keypad ROW0, ROW1 and ROW3 to these pins respectively.
+byte colPins[COLS] = {D3, D4, D5}; // Connect keypad COL0, COL1 and COL2 to these pins respectively.
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
 void setup() {
 Serial.begin(9600); // Initialize serial communication
 }
 
 void loop() {
-
+char key = keypad.getKey();
+  if (key) {
+    Serial.println(key);
+  }
 }
