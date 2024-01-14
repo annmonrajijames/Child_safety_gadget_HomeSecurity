@@ -8,8 +8,8 @@ char keys[ROWS][COLS] = {
 
   {'*','0','#'}
 };
-byte rowPins[ROWS] = {D0, D1, D2}; // Connect keypad ROW0, ROW1, ROW2, and ROW3 to these pins.
-byte colPins[COLS] = {D3, D4, D5}; // Connect keypad COL0, COL1, COL2, and COL3 to these pins.
+byte rowPins[ROWS] = {D0, D1, D2}; // Connect keypad ROW0, ROW1 and ROW3 to these pins.
+byte colPins[COLS] = {D3, D4, D5}; // Connect keypad COL0, COL1 and COL2 to these pins.
 
 void setup() {
 Serial.begin(9600); // Initialize serial communication
