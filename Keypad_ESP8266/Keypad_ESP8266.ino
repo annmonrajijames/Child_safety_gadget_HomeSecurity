@@ -21,7 +21,5 @@ pinMode(D8, OUTPUT); // Red LED
 
 void loop() {
 char key = keypad.getKey(); // Read the key that is pressed
-  if (key) { // The pressed key will shown as output
-    Serial.println(key);
-  }
+  
 }
