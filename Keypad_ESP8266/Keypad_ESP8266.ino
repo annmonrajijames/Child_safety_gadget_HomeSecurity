@@ -23,15 +23,20 @@ byte rowPins[ROWS] = {D0, D1, D2}; // Connect keypad ROW0, ROW1 and ROW3 to thes
 byte colPins[COLS] = {D3, D4, D5}; // Connect keypad COL0, COL1 and COL2 to these pins respectively.
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS ); //Initialize the keypad
 String v_passcode="";
+BlynkTimer timer; // timer object created, BlynkTimer is a class.
+
 void setup() {
-Blynk.begin(auth, ssid, pass);
+Blynk.begin(auth, ssid, pass); // Start Blynk using WiFi credentials
 Serial.begin(9600); // Start serial communication at 9600 baud rate
 pinMode(D6, OUTPUT); // Buzzer
 pinMode(D7, OUTPUT); // Green LED
 pinMode(D8, OUTPUT); // Red LED
+timer.setInterval(1L, emailsetup); // Set timer to call emailsetup function every 1 second
 }
 
-void loop() {
+// emailsetup being scheduled to be called repeatedly by the BlynkTimer object.
+// emailsetup() is scheduled to run every 1 millisecond, almost every time loop() runs, timer.run() will execute emailsetup().
+void emailsetup() {
 char key = keypad.getKey(); // Read the key that is pressed
     if (key != NO_KEY) { // If a key is pressed, add it to the passcode string, NO_KEY is predefined in they keypad library
     v_passcode = v_passcode + key; // Append the pressed key to the passcode
@@ -75,4 +80,8 @@ char key = keypad.getKey(); // Read the key that is pressed
     }
   }
   
+}
+void loop() {
+  Blynk.run(); // Run Blynk process
+  timer.run(); // checks if it's time to call any function scheduled by the timer.
 }
