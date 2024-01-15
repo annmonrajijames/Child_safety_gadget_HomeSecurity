@@ -3,6 +3,10 @@
 #define BLYNK_AUTH_TOKEN "RDs-5TaFIsxVHn6VEC483jSQKw_JjJ0q"
 #define BLYNK_PRINT Serial
 
+char auth[] = BLYNK_AUTH_TOKEN;
+char ssid[] = "Annmon"; // WiFi network name
+char pass[] = "childsafe"; // WiFi password
+
 #include <ESP8266WiFi.h>
 #include <Keypad.h>
 #include <BlynkSimpleEsp8266.h>
@@ -20,6 +24,7 @@ byte colPins[COLS] = {D3, D4, D5}; // Connect keypad COL0, COL1 and COL2 to thes
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS ); //Initialize the keypad
 String v_passcode="";
 void setup() {
+Blynk.begin(auth, ssid, pass);
 Serial.begin(9600); // Start serial communication at 9600 baud rate
 pinMode(D6, OUTPUT); // Buzzer
 pinMode(D7, OUTPUT); // Green LED
