@@ -49,24 +49,15 @@ char key = keypad.getKey(); // Read the key that is pressed
         digitalWrite(D7, LOW);  
       } else { // Password is wrong
         Serial.println("Access Denied");
-        digitalWrite(D6,HIGH);
-        delay(50);
-        digitalWrite(D6,LOW);
-        delay(50);
-        digitalWrite(D6,HIGH);
-        delay(50);
-        digitalWrite(D6,LOW);
-        delay(100);
-        digitalWrite(D6,HIGH);
-        delay(50);
-        digitalWrite(D6,LOW);
-        delay(50);
-        digitalWrite(D6,HIGH);
-        delay(50);
-        digitalWrite(D6,LOW);
-        digitalWrite(D8,HIGH);
-        delay(2000);
-        digitalWrite(D8,LOW);
+         for (int i = 0; i < 3; i++) {
+          digitalWrite(D6, HIGH);
+          delay(50);
+          digitalWrite(D6, LOW);
+          delay(50);
+        }
+          digitalWrite(D8,HIGH);
+          delay(2000);
+          digitalWrite(D8,LOW);
       }
       Serial.println("The entered password is " + v_passcode);
     }
