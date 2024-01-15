@@ -39,7 +39,7 @@ char key = keypad.getKey(); // Read the key that is pressed
         digitalWrite(D6, LOW);  // Turn off buzzer
         digitalWrite(D7, LOW);  // Turn off green LED
 
-      } else if (v_passcode == "5050#") { 
+      } else if (v_passcode == "123#") { 
       /* Pseudo-password [From outside of the device it will show correct, 
       but it signals SOS to parents]*/
         digitalWrite(D6, HIGH); // Output from device is same as correct password 
