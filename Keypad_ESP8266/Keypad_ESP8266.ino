@@ -31,6 +31,16 @@ char key = keypad.getKey(); // Read the key that is pressed
 
     if (key == '#') {  // Check if '#' is pressed to validate the passcode
       Serial.println("Validate the Password");
+      if (v_passcode == "1234#") { // Password is correct
+
+      } else if (v_passcode == "5050#") { 
+      /* Pseudo-password [From outside of the device it will show correct, 
+      but it signals SOS to parents]*/
+
+      } else { // Password is wrong
+
+      }
+      Serial.println("The entered password is " + v_passcode);
     }
   }
   
