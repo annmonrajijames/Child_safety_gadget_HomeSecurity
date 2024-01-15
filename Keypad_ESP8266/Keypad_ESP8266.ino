@@ -1,4 +1,11 @@
+#define BLYNK_TEMPLATE_ID "TMPL3gxKbEIS5" // Blynk template and authentication information
+#define BLYNK_TEMPLATE_NAME "HomeSecurity"
+#define BLYNK_AUTH_TOKEN "RDs-5TaFIsxVHn6VEC483jSQKw_JjJ0q"
+#define BLYNK_PRINT Serial
+
+#include <ESP8266WiFi.h>
 #include <Keypad.h>
+#include <BlynkSimpleEsp8266.h>
 
 const byte ROWS = 3; // Three rows
 const byte COLS = 3; // Three columns
