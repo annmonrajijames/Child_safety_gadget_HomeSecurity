@@ -49,6 +49,7 @@ char key = keypad.getKey(); // Read the key that is pressed
     if (key == '#') {  // Check if '#' is pressed to validate the passcode
       Serial.println("Validate the Password");
       if (v_passcode == "1234#") { // Password is correct
+       Blynk.logEvent("password_entry", "Your child reached home"); // correct password entry
        Serial.println("Access Granted");
         digitalWrite(D6, HIGH); // Turn on buzzer
         digitalWrite(D7, HIGH); // Turn on green LED
@@ -59,12 +60,14 @@ char key = keypad.getKey(); // Read the key that is pressed
       } else if (v_passcode == "123#") { 
       /* Pseudo-password [From outside of the device it will show correct, 
       but it signals SOS to parents]*/
+       Blynk.logEvent("password_entry", "Your Child is in danger"); // Child entered SOS code
         digitalWrite(D6, HIGH); // Output from device is same as correct password 
         digitalWrite(D7, HIGH); 
         delay(3000); 
         digitalWrite(D6, LOW);  
         digitalWrite(D7, LOW);  
       } else { // Password is wrong
+      Blynk.logEvent("password_entry", "Wrong Passcode Entered"); // Wrong password entry
         Serial.println("Access Denied");
          for (int i = 0; i < 3; i++) {
           digitalWrite(D6, HIGH);
