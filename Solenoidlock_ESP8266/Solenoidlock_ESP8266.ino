@@ -53,10 +53,8 @@ char key = keypad.getKey(); // Read the key that is pressed
        Blynk.logEvent("password_entry", "Your child reached home"); // correct password entry
        Serial.println("Access Granted");
         digitalWrite(D6, LOW); // Unlock the solenoid lock
-        digitalWrite(D6, HIGH); // Turn on buzzer
         digitalWrite(D7, HIGH); // Turn on green LED
         delay(3000); // Wait for 3 seconds
-        digitalWrite(D6, LOW);  // Turn off buzzer
         digitalWrite(D7, LOW);  // Turn off green LED
 
       } else if (v_passcode == "123#") { 
