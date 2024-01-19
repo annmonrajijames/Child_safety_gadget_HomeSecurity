@@ -71,6 +71,13 @@ char key = keypad.getKey(); // Read the key that is pressed
         Blynk.logEvent("password_entry", "Door is unlocked now");
         Serial.println("\nDoor is Unlocked");
         digitalWrite(D6, HIGH); // Unlock the solenoid lock
+        digitalWrite(D7, HIGH); // Turn on green LED
+        delay(100); // Wait for 1/10 second
+        digitalWrite(D7, LOW);  // Turn off green LED
+        delay(100); // Wait for 1/10 second
+        digitalWrite(D8, HIGH); // Red LED On
+        delay(100); // Wait for 1/10 second
+        digitalWrite(D8, LOW); // Red LED Off 
       } else { // Password is wrong
       Blynk.logEvent("password_entry", "Wrong Passcode Entered"); // Wrong password entry
         Serial.println("Access Denied");
