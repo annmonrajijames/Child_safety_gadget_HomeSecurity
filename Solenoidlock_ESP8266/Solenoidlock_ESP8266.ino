@@ -75,6 +75,7 @@ char key = keypad.getKey(); // Read the key that is pressed
           digitalWrite(D8,LOW); // RED led
       }
       Serial.println("The entered password is " + v_passcode);
+      v_passcode = ""; // Reset the passcode string
     }
   }
   
