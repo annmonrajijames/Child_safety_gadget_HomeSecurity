@@ -70,15 +70,9 @@ char key = keypad.getKey(); // Read the key that is pressed
       } else { // Password is wrong
       Blynk.logEvent("password_entry", "Wrong Passcode Entered"); // Wrong password entry
         Serial.println("Access Denied");
-         for (int i = 0; i < 3; i++) {
-          digitalWrite(D6, HIGH);
-          delay(50);
-          digitalWrite(D6, LOW);
-          delay(50);
-        }
-          digitalWrite(D8,HIGH);
+          digitalWrite(D8,HIGH); // RED led
           delay(2000);
-          digitalWrite(D8,LOW);
+          digitalWrite(D8,LOW); // RED led
       }
       Serial.println("The entered password is " + v_passcode);
     }
