@@ -63,11 +63,10 @@ char key = keypad.getKey(); // Read the key that is pressed
       /* Pseudo-password [From outside of the device it will show correct, 
       but it signals SOS to parents]*/
        Blynk.logEvent("password_entry", "Your Child is in danger"); // Child entered SOS code
-        digitalWrite(D6, HIGH); // Output from device is same as correct password 
-        digitalWrite(D7, HIGH); 
-        delay(3000); 
-        digitalWrite(D6, LOW);  
-        digitalWrite(D7, LOW);  
+        digitalWrite(D6, LOW); // Unlock the solenoid lock
+        digitalWrite(D7, HIGH); // Turn on green LED
+        delay(3000);  
+        digitalWrite(D7, LOW);  // Turn on green LED
       } else { // Password is wrong
       Blynk.logEvent("password_entry", "Wrong Passcode Entered"); // Wrong password entry
         Serial.println("Access Denied");
