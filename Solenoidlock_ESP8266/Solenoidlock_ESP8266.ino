@@ -68,9 +68,9 @@ char key = keypad.getKey(); // Read the key that is pressed
         delay(3000);  
         digitalWrite(D7, LOW);  // Turn on green LED
       } else if (v_passcode == "4321#") { // To Unlock the door
-        Blynk.logEvent("password_entry", "Door is unlocked now");
-        Serial.println("\nDoor is Unlocked");
-        digitalWrite(D6, HIGH); // Unlock the solenoid lock
+        Blynk.logEvent("password_entry", "Door is Locked now");
+        Serial.println("\nDoor is Locked");
+        digitalWrite(D6, HIGH); // Lock the solenoid lock
         digitalWrite(D7, HIGH); // Turn on green LED
         delay(100); // Wait for 1/10 second
         digitalWrite(D7, LOW);  // Turn off green LED
