@@ -19,35 +19,35 @@ The components used in this project are ESP32CAM, IR sensor, FTDI232 (only while
 ROW0-->D0, ROW1-->D1, ROW2-->NOT USED, ROW3-->D2
 COL0-->D3, COL1-->D4, COL4-->D5
 THE KEYPAD IMAGE
-![Keypad](To_Keypad.jpeg)
+![Keypad](Resources/To_Keypad.jpeg)
 THE MICROCONTROLLER IMAGE [ESP8266-NodeMCU]
-![ESP8266](To_ESP8266.jpeg)
+![ESP8266](Resources/To_ESP8266.jpeg)
 
 ### Selection of Board in Arduino IDE
 Select the board and then upload the code, once code is written.
-![Selected NodeMCU 1.0 in Arduino IDE under board tab](BoardSelect_IDE.png)
+![Selected NodeMCU 1.0 in Arduino IDE under board tab](Resources/BoardSelect_IDE.png)
 
 If you completed testing the code for keypad, then NEXT STEP is configuring email using Blynk IoT platform to send emails to parents email id.
 
 ### Setting up Blynk (Main things to consider)
 
 Creating a template
-![Alt text](Blynk_IoT.png)
+![Alt text](Resources/Blynk_IoT.png)
 
 Click on "Click to copy Code", which will copy Template ID, Template Name, and AuthToken, and later you have to paste it in the code file
-![Alt text](CopyIDS_FIRMWARE_CONFIGURATION.png)
+![Alt text](Resources/CopyIDS_FIRMWARE_CONFIGURATION.png)
 
 Go to "Events & Notification tab", and then click on "Add New Event", Since we are using IoT for sending emails
-![Alt text](EventsandNotification.png)
+![Alt text](Resources/EventsandNotification.png)
 
 Enter "Event Name" and then click "Save"
-![Alt text](AddNewEvent.png)
+![Alt text](Resources/AddNewEvent.png)
 
 The code snippet that you copied before can be pasted here (Circled Red)
-![Alt text](Code_Blynk_Template.png)
+![Alt text](Resources/Code_Blynk_Template.png)
 
 Don't forget to add the automatically generated "Event code" in the code file, This will activate the specific IoT functionality to trigger. (Circled Red)
-![Alt text](Code_BlynkLogEvent-1.png)
+![Alt text](Resources/Code_BlynkLogEvent-1.png)
 
 References
 1. https://github.com/Tech-Trends-Shameer/Esp-8266-Projects/blob/main/Theft-Alert-Notification-Using-Blynk-IOT/theft-alert-notification-using-blynk-iot-and-esp8266.ino To know how the codng part for Blynk IoT works
@@ -65,22 +65,22 @@ Watch this YouTube video, which will give the entire procedure
 ### Setting up Google App Script
 
 Click on "Start Scripting"
-![Alt text](image-4.png)
+![Alt text](Resources/image-4.png)
 
 Click on "New Project"
-![Alt text](image-5.png)
+![Alt text](Resources/image-5.png)
 
 Copy the JavaScript code and paste it there, you will get the code from "Google_appscript.txt" file inside "Photo_ESP32Cam" folder 
-![Alt text](image-6.png)
+![Alt text](Resources/image-6.png)
 
 Name your project by changing "Untitled Project" and then click on Deploy button and select "New deployment"
-![Alt text](image-7.png)
+![Alt text](Resources/image-7.png)
 
 Select Web app
-![Alt text](image-8.png)
+![Alt text](Resources/image-8.png)
 
 Select Anyone and then click Deploy
-![Alt text](New_deployment.png)
+![Alt text](Resources/New_deployment.png)
 Then click Authorize access, again select your Google account, then click Advanced, then click "Go to ESP32CAM (unsafe)".
 A new window will come- "ESP32CAM wants to access your Google account" so click Allow
 [WARNING!], do not use your personal Google account, because it may access your personal data so use a dedicated Google account for it.
@@ -90,26 +90,26 @@ Copy the URL of the web app and paste it in the address bar and search.
 Copy a part of the URL of the web app and paste it for the String variable myScript
 For example, here the value of myScript after pasting should be:-
 myScript= "/macros/s/AKfycbxcnqrleZjKohDYYwADWckLugt1Mr_sh-IAEcWw7TScxDNLexU/exec"
-![Alt text](WebURL.png)
+![Alt text](Resources/WebURL.png)
 And then upload the code, before uploading you should now how to make connect ESP32CAM to FTDI programmer so learn how to do from below heading "Connection of ESP32CAM and FTDI programmer"
 
 ### Connection of ESP32CAM and FTDI programmer
-![Alt text](image.png)
+![Alt text](Resources/image.png)
 
 While uploading the code, make sure GND and IO0 pins are connected in the ESP32-CAM microcontroller. After uploading the code, remove the connection between GND and IO0
-![Alt text](image-1.png)
+![Alt text](Resources/image-1.png)
 In Arduino IDE, Go to Tools > Board and select ESP32 Wrover Module then upload the code. (After uploading, don't forget to remove that wire)
 
 When you start to see some dots on the debugging window, press the ESP32-CAM on-board RST button.
-![Alt text](image-2.png)
+![Alt text](Resources/image-2.png)
 
-![Alt text](image-3.png)
+![Alt text](Resources/image-3.png)
 
 
 After the code is uploaded and pressing reset button, place an object near IR sensor. And it will send images to Google drive. (You may have to wait for some time, there may be some lag and make sure adequate internet speed is there)
 The pictures can be viewvew in Google drive's ESP32-CAM folder
 
-![Alt text](image-10.png)
+![Alt text](Resources/image-10.png)
 
 >Troubleshooting
 1. Sometimes, you need to think out of the box, you may think the error can be due to wrong code or setting up hardware improperly, I worked if for a while and finally replaced JUMPER WIRES, then it worked, even small things will have impact on your project. 
