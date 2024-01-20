@@ -29,7 +29,7 @@ void setup() {
 Blynk.begin(auth, ssid, pass); // Start Blynk using WiFi credentials
 Serial.begin(9600); // Start serial communication at 9600 baud rate
 pinMode(D6, OUTPUT); // Pin connected to the relay controlling the solenoid lock
-digitalWrite(D6, LOW); // Start with the solenoid lock in locked state
+digitalWrite(D6, HIGH); // Start with the solenoid lock in locked state
 pinMode(D7, OUTPUT); // Green LED
 pinMode(D8, OUTPUT); // Red LED
 timer.setInterval(1L, emailsetup); // Set timer to call emailsetup function every 1 second
