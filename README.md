@@ -12,6 +12,10 @@ The components of project are ES8266 microcontroller, Keypad, RGB Led light, Jum
 Child safety gadget 2.0, brings camera feature to the device where it will take a picture and sends the picture to Google drive when someone comes near the device. An IR sensor is used for this, as the child enters the password the IR sensor which is placed near the device will get activated and will send the picture to parents Google drive. 
 The components used in this project are ESP32CAM, IR sensor, FTDI232 (only while uploading the code), Jumper wires and Breadboard.
 
+## Child safety gadget 3.0
+Door lock is added to the existing child safety gadget, which makes part of Home Security. 
+Door will be opened if either correct password OR pseudo-password is entered, To lock the door reverse password of correct password can be entered. For wrong password, nothing will happen.
+
 # Development steps for child safety 1.0
 
 
@@ -70,7 +74,7 @@ Click on "Start Scripting"
 Click on "New Project"
 ![Alt text](Resources/image-5.png)
 
-Copy the JavaScript code and paste it there, you will get the code from "Google_appscript.txt" file inside "Photo_ESP32Cam" folder 
+Copy the JavaScript code and paste it there, you will get the code from "Google_appscript.js" file inside "Photo_ESP32Cam" folder 
 ![Alt text](Resources/image-6.png)
 
 Name your project by changing "Untitled Project" and then click on Deploy button and select "New deployment"
@@ -117,6 +121,5 @@ The pictures can be viewvew in Google drive's ESP32-CAM folder
 3. The camera in the ESP32-CAM may be loosely attached, so make sure that the camera is working, you may try with basic CameraWebServer code to check only for the camera.
 4. Maybe you need to press RST button again, to check whether the ESP32-CAM works properly, in the one i brought, the ESP32-CAM blynks flash light after pressing RST button. (may not be true for all versions). I used ESP32-S version.
 
-## Child safety gadget 3.0
-Door lock is added to the existing child safety gadget, which makes part of Home Security. 
-Door will be opened if either correct password OR pseudo-password is entered, To lock the door reverse password of correct password can be entered. For wrong password, nothing will happen.
+# Development steps for child safety 3.0
+
