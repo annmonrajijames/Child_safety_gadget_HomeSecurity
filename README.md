@@ -46,5 +46,5 @@ Enter "Event Name" and then click "Save"
 The code snippet that you copied before can be pasted here (Circled Red)
 ![Alt text](Code_Blynk_Template.png)
 
-Don't forget to the automatically generated "Event code" in the code file, This will activate the specific IoT functionality to trigger. 
+Don't forget to add the automatically generated "Event code" in the code file, This will activate the specific IoT functionality to trigger. (Circled Red)
 ![Alt text](Code_BlynkLogEvent-1.png)
