@@ -48,3 +48,71 @@ The code snippet that you copied before can be pasted here (Circled Red)
 
 Don't forget to add the automatically generated "Event code" in the code file, This will activate the specific IoT functionality to trigger. (Circled Red)
 ![Alt text](Code_BlynkLogEvent-1.png)
+
+References
+1. https://github.com/Tech-Trends-Shameer/Esp-8266-Projects/blob/main/Theft-Alert-Notification-Using-Blynk-IOT/theft-alert-notification-using-blynk-iot-and-esp8266.ino To know how the codng part for Blynk IoT works
+
+# Development steps for child safety 2.0
+
+References- 
+
+1. https://www.electroniclinic.com/esp32-cam-send-images-to-google-drive-iot-security-camera/ 
+This is the main reference where i got the source code for the camera module. There are two files of source codes, one is without IR sensor(periodically taking pictures) and the other is with IR sensor. (Take picture when IR sensor gets activated)
+2. https://randomnerdtutorials.com/program-upload-code-esp32-cam/ If you have doubts regarding connection of ESP32CAM and FTDI232 and on trouble shooting, then refer this
+3. https://youtu.be/9BOYOMEJXUg
+Watch this YouTube video, which will give the entire procedure 
+
+### Setting up Google App Script
+
+Click on "Start Scripting"
+![Alt text](image-4.png)
+
+Click on "New Project"
+![Alt text](image-5.png)
+
+Copy the JavaScript code and paste it there, you will get the code from "Google_appscript.txt" file inside "Photo_ESP32Cam" folder 
+![Alt text](image-6.png)
+
+Name your project by changing "Untitled Project" and then click on Deploy button and select "New deployment"
+![Alt text](image-7.png)
+
+Select Web app
+![Alt text](image-8.png)
+
+Select Anyone and then click Deploy
+![Alt text](New_deployment.png)
+Then click Authorize access, again select your Google account, then click Advanced, then click "Go to ESP32CAM (unsafe)".
+A new window will come- "ESP32CAM wants to access your Google account" so click Allow
+[WARNING!], do not use your personal Google account, because it may access your personal data so use a dedicated Google account for it.
+
+Copy the URL of the web app and paste it in the address bar and search.
+
+Copy a part of the URL of the web app and paste it for the String variable myScript
+For example, here the value of myScript after pasting should be:-
+myScript= "/macros/s/AKfycbxcnqrleZjKohDYYwADWckLugt1Mr_sh-IAEcWw7TScxDNLexU/exec"
+![Alt text](WebURL.png)
+And then upload the code, before uploading you should now how to make connect ESP32CAM to FTDI programmer so learn how to do from below heading "Connection of ESP32CAM and FTDI programmer"
+
+### Connection of ESP32CAM and FTDI programmer
+![Alt text](image.png)
+
+While uploading the code, make sure GND and IO0 pins are connected in the ESP32-CAM microcontroller. After uploading the code, remove the connection between GND and IO0
+![Alt text](image-1.png)
+In Arduino IDE, Go to Tools > Board and select ESP32 Wrover Module then upload the code. (After uploading, don't forget to remove that wire)
+
+When you start to see some dots on the debugging window, press the ESP32-CAM on-board RST button.
+![Alt text](image-2.png)
+
+![Alt text](image-3.png)
+
+
+After the code is uploaded and pressing reset button, place an object near IR sensor. And it will send images to Google drive. (You may have to wait for some time, there may be some lag and make sure adequate internet speed is there)
+The pictures can be viewvew in Google drive's ESP32-CAM folder
+
+![Alt text](image-10.png)
+
+>Troubleshooting
+1. Sometimes, you need to think out of the box, you may think the error can be due to wrong code or setting up hardware improperly, I worked if for a while and finally replaced JUMPER WIRES, then it worked, even small things will have impact on your project. 
+2. Use different cable for connecting between FTDI and USB port.
+3. The camera in the ESP32-CAM may be loosely attached, so make sure that the camera is working, you may try with basic CameraWebServer code to check only for the camera.
+4. Maybe you need to press RST button again, to check whether the ESP32-CAM works properly, in the one i brought, the ESP32-CAM blynks flash light after pressing RST button. (may not be true for all versions). I used ESP32-S version.
