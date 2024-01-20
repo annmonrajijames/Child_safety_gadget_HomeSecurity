@@ -10,7 +10,7 @@ Child safety gadget 2.0, brings camera feature to the device where it will take 
 The components used in this project are ESP32CAM, IR sensor, FTDI232 (only while uploading the code), Jumper wires and Breadboard.
 
 ### Selection of Board in Arduino IDE
-![Selected NodeMCU 1.0 in Arduino IDE under board tab](image.png)
+![Selected NodeMCU 1.0 in Arduino IDE under board tab](BoardSelect_IDE.png)
 
 ### Connection of wires between Keypad & ESP8266
 ROW0-->D0, ROW1-->D1, ROW2-->NOT USED, ROW3-->D2
