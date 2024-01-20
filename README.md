@@ -116,3 +116,7 @@ The pictures can be viewvew in Google drive's ESP32-CAM folder
 2. Use different cable for connecting between FTDI and USB port.
 3. The camera in the ESP32-CAM may be loosely attached, so make sure that the camera is working, you may try with basic CameraWebServer code to check only for the camera.
 4. Maybe you need to press RST button again, to check whether the ESP32-CAM works properly, in the one i brought, the ESP32-CAM blynks flash light after pressing RST button. (may not be true for all versions). I used ESP32-S version.
+
+## Child safety gadget 3.0
+Door lock is added to the existing child safety gadget, which makes part of Home Security. 
+Door will be opened if either correct password OR pseudo-password is entered, To lock the door reverse password of correct password can be entered. For wrong password, nothing will happen.
