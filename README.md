@@ -123,3 +123,40 @@ The pictures can be viewvew in Google drive's ESP32-CAM folder
 
 # Development steps for child safety 3.0
 
+Extra components required:- 1 channel relay, Solenoid lock, Power adapter.
+![Alt text](Resources/Lockmodule.jpeg)
+
+Wiring connection of 1 channel relay \
+NO (Normally Open) -->Solenoid lock \
+COM (Common)--> Power supply adapter \
+NC (Normally Closed) --> Left unconnected \
+INP --> D6 of ESP8266 microcontroller \
+V+ --> 3V3 of ESP8266 microcontroller \
+GND --> GND of ESP8266 microcontrller \
+
+Relay to Solenoid Lock: \
+NO (Normally Open): Connected to one terminal of the solenoid lock. \
+COM (Common): Connected to the positive (+) terminal of the 12V power supply. The other terminal of the solenoid lock connects to the negative (-) terminal of the power supply. \
+
+Relay to ESP8266: \
+INP (Input): Connected to pin D6 of the ESP8266. This pin controls the relay, and thereby the solenoid lock. \
+V+: Connected to the 3V3 (3.3 volts) pin of the ESP8266. This supplies power to the relay. \
+GND (Ground): Connected to a GND pin on the ESP8266 to complete the circuit. \
+
+1-Channel Relay: Serves as an electrically operated switch that allows the ESP8266 to control the solenoid lock, which operates at a higher voltage than the ESP8266 can handle directly.
+![Alt text](Resources/1channelrelay.jpeg)
+
+One pin of solenoid lock is connected to the power supply adapter and the other pin is connected to NO (Normally Open) of Solenoid lock \
+Solenoid Lock: The locking mechanism that is controlled by the relay.
+![Alt text](Resources/SolenoidLock.jpeg)
+
+The end of wire of the Power supply adapter is cut, and we will get two wires, connect one end of the wire to the COM (Common) of the 1 channel relay and the other end to the Solenoid lock.
+![Alt text](Resources/12Vpowersupply.jpeg)
+
+Why Connect to NO (Normally Open) and not NC (Normally Closed) of 1 channel relay ? \
+Answer:- In a relay, the NO terminal represents a contact that remains open (i.e., no electrical connection) when the relay is not energized. When the relay coil is activated (energized), the contact closes, allowing current to flow through. \
+In this Project, The NO terminal is connected to the solenoid lock. When the relay is not energized (i.e., when the ESP8266 has not sent a signal to trigger the relay), there's no electrical connection between the NO terminal and the COM terminal. This means the solenoid lock remains locked. When the correct passcode is entered, the relay is energized, closing the NO contact, allowing current to flow from the power source (12V adapter) through the COM and NO terminals to the solenoid lock, thus unlocking it.
+COM (Common) is the common terminal used in both NO and NC configurations. It's the terminal to which you connect the power supply that you want to switch on or off. \
+In this Project, the COM terminal is connected to the positive terminal of your 12V power adapter. Depending on the state of the relay (energized or not), this terminal either makes or breaks the circuit with the NO terminal, thus controlling the locking or unlocking of the solenoid.
+NC (Normally Closed) terminal is the opposite of NO. It represents a contact that is closed (i.e., there is an electrical connection) when the relay is not energized. When the relay is activated, this contact opens, breaking the current flow. \
+In this Project: Haven't used the NC terminal in this setup. If it were used, the solenoid lock would be unlocked by default and would only lock when the relay was energized.
