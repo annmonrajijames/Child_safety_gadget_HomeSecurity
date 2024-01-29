@@ -1,19 +1,30 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 
+const char* ssid = "Annmon";
+const char* password = "childsafe";
+
 #include <String.h>
 
 #define RED D5
 #define GREEN D6
 #define BLUE  D7
 
-const char* ssid = "Yout_Tube_WIFI_APP";
-const char* password = "12345678";
+const char* ap_ssid = "Yout_Tube_WIFI_APP";
+const char* ap_password = "12345678";
 WiFiServer server(80);
 
 void setup() {
   Serial.begin(115200);
-  WiFi.softAP(ssid, password); 
+  // Connect to Wi-Fi
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Connecting to WiFi...");
+  }
+  Serial.println("Connected to WiFi");
+
+  WiFi.softAP(ap_ssid, ap_password); 
   server.begin();
   Serial.println("Access Point started");
   Serial.print("IP address: ");
