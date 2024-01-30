@@ -160,3 +160,13 @@ COM (Common) is the common terminal used in both NO and NC configurations. It's 
 In this Project, the COM terminal is connected to the positive terminal of your 12V power adapter. Depending on the state of the relay (energized or not), this terminal either makes or breaks the circuit with the NO terminal, thus controlling the locking or unlocking of the solenoid.
 NC (Normally Closed) terminal is the opposite of NO. It represents a contact that is closed (i.e., there is an electrical connection) when the relay is not energized. When the relay is activated, this contact opens, breaking the current flow. \
 In this Project: Haven't used the NC terminal in this setup. If it were used, the solenoid lock would be unlocked by default and would only lock when the relay was energized.
+
+## Child safety 4.0 (lock from inside)
+
+## Setting up I/O expander
+
+For that MCP23017
+
+Pin configuration of MCP23017
+
+![Alt text](PinConfig_MCP23017.png)
