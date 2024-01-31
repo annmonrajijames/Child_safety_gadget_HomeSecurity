@@ -1,28 +1,28 @@
-#include <Adafruit_MCP23X08.h>
-#include <Adafruit_MCP23X17.h>
-#include <Adafruit_MCP23XXX.h>
-
+#include <Arduino.h>
 #include <Wire.h>
+#include <MCP23017.h>
 
-// Create MCP23017 instance
-Adafruit_MCP23X17 mcp;
+// Initialize MCP23017 with the address 0x24 (adjust if needed)
+MCP23017 mcp = MCP23017(0x24);
 
 void setup() {
-  mcp.begin_I2C();      // Default address 0
+  Wire.begin();    // Start I2C communication
+  mcp.init();      // Initialize MCP23017
 
-  // Set MCP23017 pins to output
-  mcp.pinMode(0, OUTPUT);
-  mcp.pinMode(1, OUTPUT);
+  // Set pin 8 (GPB0) to output. Adjust as needed for your setup.
+  mcp.pinMode(8, OUTPUT);
 }
 
 void loop() {
-  // Turn LEDs on
-  mcp.digitalWrite(0, HIGH);
-  mcp.digitalWrite(1, HIGH);
-  delay(500);
+  // Turn the LED on at pin 8
+  mcp.digitalWrite(8, HIGH);
 
-  // Turn LEDs off
-  mcp.digitalWrite(0, LOW);
-  mcp.digitalWrite(1, LOW);
-  delay(500);
+  // Wait for a second
+  delay(1000);
+
+  // Turn the LED off at pin 8
+  mcp.digitalWrite(8, LOW);
+
+  // Wait for a second
+  delay(1000);
 }
