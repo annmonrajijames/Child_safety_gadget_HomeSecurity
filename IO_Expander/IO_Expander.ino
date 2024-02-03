@@ -1,28 +1,24 @@
-#include <Arduino.h>
-#include <Wire.h>
-#include <MCP23017.h>
+// Blinks an LED attached to a MCP23XXX pin.
+#include <Adafruit_MCP23X17.h>
 
-// Initialize MCP23017 with the address 0x24 (adjust if needed)
-MCP23017 mcp = MCP23017(0x24);
+#define LED_PIN 0     // MCP23XXX pin LED is attached to GPA0; MCP23x17 Pin 21
+
+Adafruit_MCP23X17 mcp;
 
 void setup() {
-  Wire.begin();    // Start I2C communication
-  mcp.init();      // Initialize MCP23017
-
-  // Set pin 8 (GPB0) to output. Adjust as needed for your setup.
-  mcp.pinMode(8, OUTPUT);
+  Serial.begin(9600);
+  Serial.println("MCP23xxx Blink Test!");
+  if (!mcp.begin_I2C()) {
+    Serial.println("Error.");
+    while (1);
+  }
+  mcp.pinMode(LED_PIN, OUTPUT);
+  Serial.println("Looping...");
 }
 
 void loop() {
-  // Turn the LED on at pin 8
-  mcp.digitalWrite(8, HIGH);
-
-  // Wait for a second
-  delay(1000);
-
-  // Turn the LED off at pin 8
-  mcp.digitalWrite(8, LOW);
-
-  // Wait for a second
-  delay(1000);
+ mcp.digitalWrite(LED_PIN, HIGH);
+ delay(500);
+ mcp.digitalWrite(LED_PIN, LOW);
+ delay(500);
 }
