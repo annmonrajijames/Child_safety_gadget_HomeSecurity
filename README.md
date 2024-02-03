@@ -171,14 +171,22 @@ Pin configuration of MCP23017
 
 ![Alt text](Resources/PinConfig_MCP23017.png)
 
-MCP23017 <--> ESP8266 hardware connection =>
-VDD <--> 3v3
-VSS <--> GND
-SCL <--> D1 (GPIO5)
-SDA <--> D2 (GPIO4)
-A0  <--> GND
-A1  <--> GND
-A2  <--> GND
+MCP23017 <--> ESP8266 hardware connection => \
+VDD <--> 3v3 \
+VSS <--> GND \
+SCL <--> D1 (GPIO5) \
+SDA <--> D2 (GPIO4) \
+A0  <--> GND \
+A1  <--> GND \
+A2  <--> GND 
 
 Let's start with most simple way to test whether ESP8266 and MCP23017 are able to communicate so for that, let's test with an LED. 
 Let's choose one I/O pin like GPA0 (Pin 21) and connect it to the longer terminal of LED and the shorter terminal of LED is connected to the ground.  
+
+![alt text](image.png)
+
+Look at the below image- which will make software easy. 
+![alt text](MCP23017_Hardware.jpeg)
+
+References
+https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library, this is the library used for MCP23017
