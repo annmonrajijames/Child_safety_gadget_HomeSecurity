@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                String command = "http://192.168.128.198/" + cmd;
+                String command = "http://192.168.4.1/" + cmd;
                 Log.d("Command------------------------------------------", command);
                 Request request = new Request.Builder().url(command).build();
                 try {
