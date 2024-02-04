@@ -193,9 +193,14 @@ Let's choose one I/O pin like GPA0 (Pin 21) and connect it to the longer termina
 Look at the below image- which will make software easy. 
 ![alt text](MCP23017_Hardware.jpeg)
 
+LED integration with MCP23017-Testing purpose. 
+![alt text](f140955b-316c-44f4-b8e7-e13d9bed21af.jpg)
+![alt text](aafb7cb5-b590-4375-8fcb-eec4ceb6921d.jpg)
+
 References
 https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library, this is the library used for MCP23017
 
+### ERROR
 LED Worked, but integration of push button failed. 
 This is the error it is showing. 
 
