@@ -1,7 +1,7 @@
 #include <Keypad.h>
-// #define Buzzer D1
-// #define GreenLed D0
-// #define RedLed D2
+#define Buzzer D6
+#define GreenLed D7
+#define RedLed D8
 const byte ROWS = 3; // Three rows
 const byte COLS = 3; // Three columns
 char keys[ROWS][COLS] = {
@@ -10,15 +10,15 @@ char keys[ROWS][COLS] = {
 
   {'*','0','#'}
 };
-byte rowPins[ROWS] = {D3, D4, D5}; // Connect keypad ROW0, ROW1 and ROW3 to these pins respectively.
-byte colPins[COLS] = {D6, D7, D8}; // Connect keypad COL0, COL1 and COL2 to these pins respectively.
+byte rowPins[ROWS] = {D0, D1, D2}; // Connect keypad ROW0, ROW1 and ROW3 to these pins respectively.
+byte colPins[COLS] = {D3, D4, D5}; // Connect keypad COL0, COL1 and COL2 to these pins respectively.
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS ); //Initialize the keypad
 String v_passcode="";
 void setup() {
 Serial.begin(9600); // Start serial communication at 9600 baud rate
-/*pinMode(Buzzer, OUTPUT); // Buzzer
+pinMode(Buzzer, OUTPUT); // Buzzer
 pinMode(GreenLed, OUTPUT); // Green LED
-pinMode(RedLed, OUTPUT); // Red LED*/
+pinMode(RedLed, OUTPUT); // Red LED
 }
 
 void loop() {
@@ -35,23 +35,23 @@ char key = keypad.getKey(); // Read the key that is pressed
       Serial.println("Validate the Password");
       if (v_passcode == "1234#") { // Password is correct
        Serial.println("Access Granted");
-       // digitalWrite(Buzzer, HIGH); // Turn on buzzer
-       // digitalWrite(GreenLed, HIGH); // Turn on green LED
+       digitalWrite(Buzzer, HIGH); // Turn on buzzer
+       digitalWrite(GreenLed, HIGH); // Turn on green LED
         delay(3000); // Wait for 3 seconds
-       // digitalWrite(Buzzer, LOW);  // Turn off buzzer
-       // digitalWrite(GreenLed, LOW);  // Turn off green LED
+       digitalWrite(Buzzer, LOW);  // Turn off buzzer
+       digitalWrite(GreenLed, LOW);  // Turn off green LED
 
       } else if (v_passcode == "123#") { 
       /* Pseudo-password [From outside of the device it will show correct, 
       but it signals SOS to parents]*/
-       // digitalWrite(Buzzer, HIGH); // Output from device is same as correct password 
-      //digitalWrite(GreenLed, HIGH); 
+       digitalWrite(Buzzer, HIGH); // Output from device is same as correct password 
+      digitalWrite(GreenLed, HIGH); 
         delay(3000); 
-       // digitalWrite(Buzzer, LOW);  
-       // digitalWrite(GreenLed, LOW);  
+       digitalWrite(Buzzer, LOW);  
+       digitalWrite(GreenLed, LOW);  
       } else { // Password is wrong
         Serial.println("Access Denied");
-        /* for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
           digitalWrite(Buzzer, HIGH);
           delay(50);
           digitalWrite(Buzzer, LOW);
@@ -59,7 +59,7 @@ char key = keypad.getKey(); // Read the key that is pressed
         }
           digitalWrite(RedLed,HIGH);
           delay(2000);
-          digitalWrite(RedLed,LOW); */
+          digitalWrite(RedLed,LOW); 
       } 
       Serial.println("The entered password is " + v_passcode);
     }
