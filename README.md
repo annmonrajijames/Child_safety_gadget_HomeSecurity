@@ -16,6 +16,11 @@ The components used in this project are ESP32CAM, IR sensor, FTDI232 (only while
 Door lock is added to the existing child safety gadget, which makes part of Home Security. 
 Door will be opened if either correct password OR pseudo-password is entered, To lock the door reverse password of correct password can be entered. For wrong password, nothing will happen.
 
+## Child safety 4.0 (lock from inside)- OPTIONAL
+We may develop this in the future, because we did not gave importance to lock from inside as it will increase the cost where no benifits can be there from a child's perspective, where the lock can be lock manually from inside. 
+For this, we were working on MCP23017 IO Expander, but it showed up error, when we tried ot integrate push push button. Integration of LED worked 
+
+
 # Development steps for child safety 1.0
 
 
@@ -161,7 +166,7 @@ In this Project, the COM terminal is connected to the positive terminal of your 
 NC (Normally Closed) terminal is the opposite of NO. It represents a contact that is closed (i.e., there is an electrical connection) when the relay is not energized. When the relay is activated, this contact opens, breaking the current flow. \
 In this Project: Haven't used the NC terminal in this setup. If it were used, the solenoid lock would be unlocked by default and would only lock when the relay was energized.
 
-## Child safety 4.0 (lock from inside)
+## Child safety 4.0 (lock from inside) 
 
 ## Setting up I/O expander
 
@@ -190,3 +195,8 @@ Look at the below image- which will make software easy.
 
 References
 https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library, this is the library used for MCP23017
+
+LED Worked, but integration of push button failed. 
+This is the error it is showing. 
+
+![alt text](a2328854-d43c-4792-9282-a46c5232f0ef.jpg)
