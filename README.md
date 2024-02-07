@@ -184,6 +184,7 @@ SDA <--> D2 (GPIO4) \
 A0  <--> GND \
 A1  <--> GND \
 A2  <--> GND 
+RESET <--> 3V3
 
 Let's start with most simple way to test whether ESP8266 and MCP23017 are able to communicate so for that, let's test with an LED. 
 Let's choose one I/O pin like GPA0 (Pin 21) and connect it to the longer terminal of LED and the shorter terminal of LED is connected to the ground.  
