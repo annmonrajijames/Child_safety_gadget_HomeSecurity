@@ -19,7 +19,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class OperatingPage extends AppCompatActivity {
 
     Button btnGREEN, btnBLUE, btnRED;
     TextView txtRES;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.operating_page);
 
 
         ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                String command = "http://192.168.128.198/" + cmd; 
+                String command = "http://192.168.128.198/" + cmd;
                 Log.d("Command------------------------------------------", command);
                 Request request = new Request.Builder().url(command).build();
                 try {
