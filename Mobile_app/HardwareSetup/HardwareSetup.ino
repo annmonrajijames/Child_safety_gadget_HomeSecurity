@@ -6,12 +6,12 @@ const char* password = "childsafe";
 
 #include <String.h>
 
-#define RED D5
+#define RED D0
 #define GREEN D6
 #define BLUE  D7
 
-const char* ap_ssid = "Yout_Tube_WIFI_APP";
-const char* ap_password = "12345678";
+const char* ap_ssid = "Annmon_ESP_Hotspot";
+const char* ap_password = "childsafe";
 WiFiServer server(80);
 
 void setup() {
