@@ -9,33 +9,43 @@
 
     <Button
         android:id="@+id/btnRED"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RED"
-        app:layout_constraintBottom_toTopOf="@+id/btnGREEN"
+        android:layout_width="445dp"
+        android:layout_height="372dp"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        android:text="UNLOCK THE DOOR"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnGREEN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GREEN"
-        app:layout_constraintBottom_toTopOf="@+id/btnBLUE"
+        android:layout_width="476dp"
+        android:layout_height="373dp"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="LOCK THE DOOR"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRED" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnBLUE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="69dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@color/colorWhite"
         android:text="BLUE"
-        app:layout_constraintBottom_toTopOf="@+id/txtRES"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGREEN" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977"
+        tools:visibility="invisible" />
 
     <TextView
         android:id="@+id/txtRES"
