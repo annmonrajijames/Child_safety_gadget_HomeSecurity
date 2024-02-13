@@ -7,8 +7,6 @@ const char* password = "childsafe";
 #include <String.h>
 
 #define RED D0
-#define GREEN D6
-#define BLUE  D7
 
 const char* ap_ssid = "Annmon_ESP_Hotspot";
 const char* ap_password = "childsafe";
@@ -31,13 +29,8 @@ void setup() {
   Serial.println(WiFi.softAPIP());  //  
 
   pinMode(RED, OUTPUT);
-  pinMode(GREEN, OUTPUT);
-  pinMode(BLUE, OUTPUT);
 
   digitalWrite(RED, LOW);
-  digitalWrite(GREEN, LOW);
-  digitalWrite(BLUE, LOW);
-
 }
 
 void loop() {
@@ -76,24 +69,19 @@ void loop() {
 
           if (command.equals("red")) {
             digitalWrite(RED, HIGH);
-            digitalWrite(GREEN, LOW);
-            digitalWrite(BLUE, LOW);
+
 
           }
 
           if (command.equals("green")) {
-            digitalWrite(GREEN, HIGH);
             digitalWrite(RED, LOW);
-            digitalWrite(BLUE, LOW);
 
 
           }
 
 
           if (command.equals("blue")) {
-            digitalWrite(BLUE, HIGH);
             digitalWrite(RED, LOW);
-            digitalWrite(GREEN, LOW);
           }
 
 
