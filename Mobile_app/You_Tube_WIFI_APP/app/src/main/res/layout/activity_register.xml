@@ -75,7 +75,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="24/7 Healthcare"
+        android:text="Welcome to Our App"
         android:textColor="@color/purple_200"
         android:textSize="34sp"
         android:textStyle="bold"
