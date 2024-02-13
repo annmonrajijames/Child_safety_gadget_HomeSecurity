@@ -6,14 +6,14 @@ const char* password = "childsafe";
 
 #include <String.h>
 
-#define RED D6
+#define SolenoidLock D6
 
 const char* ap_ssid = "Annmon_ESP_Hotspot";
 const char* ap_password = "childsafe";
 WiFiServer server(80);
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   // Connect to Wi-Fi
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
@@ -28,9 +28,9 @@ void setup() {
   Serial.print("IP address: ");
   Serial.println(WiFi.softAPIP());  //  
 
-  pinMode(RED, OUTPUT);
+  pinMode(SolenoidLock, OUTPUT);
 
-  digitalWrite(RED, LOW);
+  digitalWrite(SolenoidLock, LOW);
 }
 
 void loop() {
@@ -68,20 +68,20 @@ void loop() {
 
 
           if (command.equals("red")) {
-            digitalWrite(RED, HIGH);
+            digitalWrite(SolenoidLock, HIGH);
 
 
           }
 
           if (command.equals("green")) {
-            digitalWrite(RED, LOW);
+            digitalWrite(SolenoidLock, LOW);
 
 
           }
 
 
           if (command.equals("blue")) {
-            digitalWrite(RED, LOW);
+            digitalWrite(SolenoidLock, LOW);
           }
 
 
