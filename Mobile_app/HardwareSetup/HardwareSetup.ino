@@ -6,7 +6,7 @@ const char* password = "childsafe";
 
 #include <String.h>
 
-#define RED D0
+#define RED D6
 
 const char* ap_ssid = "Annmon_ESP_Hotspot";
 const char* ap_password = "childsafe";
