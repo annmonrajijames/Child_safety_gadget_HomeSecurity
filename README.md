@@ -1,8 +1,11 @@
 # Child_safety_gadget_HomeSecurity
-Child safety gadget is a home security device which ensures the safety of the child when the child reaches home by providing acknowledgement to the parents who are not at home. There are three versions of this module, 
+Child safety gadget is a home security device which ensures the safety of the child when the child reaches home by providing acknowledgement to the parents who are not at home. 
+ 
+The novel element of this project is the "PSEUDO-PASSCODE" concept, where the perpetrator will not able to find whether the child entered correct or incorrect password, which will alert the parents. There are three versions of this module, 
 > child safety gadget 1.0 - The password mechanism module\
 > child safety gadget 2.0 - The Camera module\
-> child safety gadget 3.0 - The lock module
+> child safety gadget 3.0 - The lock module\
+> child safety gadget 4.0 - The dedicated mobile app
 
 ## Child safety gadget 1.0
 Child safety gadget 1.0 is a device, to provide acknowledgement to parents through email to notify that child reached home after the child enters correct password on the keypad, and the led will blink green light and an email will be sent to parents mobile. If the password is wrong, wrong passcode entered email will be sent and red led will blink. The child can enter a pseudo-passcode which is a different password if the child feels threatened and this will send an SOS email to parents but the device will blink green light to fool the criminal to believe that the child entered the correct passcode. 
