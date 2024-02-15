@@ -26,5 +26,15 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // New Button for Captured Images
+        Button capturedImagesButton = findViewById(R.id.buttonCapturedImages);
+        capturedImagesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Intent to start GoogleDrive activity
+                Intent intent = new Intent(HomeActivity.this, GoogleDrive.class);
+                startActivity(intent);
+            }
+        });
     }
 }
