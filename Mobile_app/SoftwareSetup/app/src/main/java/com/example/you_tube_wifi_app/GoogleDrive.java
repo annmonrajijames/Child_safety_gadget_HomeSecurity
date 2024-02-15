@@ -20,7 +20,7 @@ public class GoogleDrive extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_drive);
         WebView wv = (WebView)findViewById(R.id.wv);
-        wv.loadUrl("https://drive.google.com/drive/folders/1nvTM39x70n_sYZI8JRU5vBTAROBKi7lc?usp=sharing");// add your link here
+        wv.loadUrl("https://drive.google.com/drive/folders/126TKtbRmXRUtDm5shlgYZakWSCkLFFL-?usp=sharing");// Gdrive folder link
         wv.setWebViewClient(new Client());
         WebSettings ws = wv.getSettings();
         ws.setJavaScriptEnabled(true);
