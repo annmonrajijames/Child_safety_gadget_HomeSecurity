@@ -4,8 +4,8 @@ import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.webkit.DownloadListener;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         WebView wv = (WebView)findViewById(R.id.wv);
-        wv.loadUrl("https:");// add your link here
+        wv.loadUrl("https://drive.google.com/drive/folders/1nvTM39x70n_sYZI8JRU5vBTAROBKi7lc?usp=sharing");// add your link here
         wv.setWebViewClient(new Client());
         WebSettings ws = wv.getSettings();
         ws.setJavaScriptEnabled(true);
