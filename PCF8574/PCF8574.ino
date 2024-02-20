@@ -12,12 +12,15 @@ char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "Annmon"; // WiFi network name
 char pass[] = "childsafe"; // WiFi password
 
+#include <String.h>
+
 #define I2CADDR         0x20       // matrix keypad address
 #include <ESP8266WiFi.h>
 #include <Keypad.h>               //library for matrix keypad
 #include <Wire.h>                 //library for I2C communication
 #include <Keypad_I2C.h>           //library for matrix keypad I2C communication
 #include <BlynkSimpleEsp8266.h>
+#include <WiFiClient.h>
 
 const byte ROWS = 4;              // 4 rows in matrix keypad
 const byte COLS = 4;              // 4 columns in matrix keypad
@@ -37,6 +40,10 @@ Keypad_I2C customKeypad( makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS, I2C
 String v_passcode="";
 BlynkTimer timer; // timer object created, BlynkTimer is a class.
 
+const char* ap_ssid = "Annmon_ESP_Hotspot";
+const char* ap_password = "childsafe";
+WiFiServer server(80);
+
 void setup(){
   Blynk.begin(auth, ssid, pass); // Start Blynk using WiFi credentials
   Serial.begin(9600);                     // initialize serial communication
@@ -47,6 +54,11 @@ void setup(){
   pinMode(GREEN, OUTPUT); // Green LED
   pinMode(RED, OUTPUT); // Red LED
   timer.setInterval(1L, emailsetup); // Set timer to call emailsetup function every 1 second
+  WiFi.softAP(ap_ssid, ap_password); 
+  server.begin();
+  Serial.println("Access Point started");
+  Serial.print("IP address: ");
+  Serial.println(WiFi.softAPIP());
 }
   
 void emailsetup() {
@@ -112,4 +124,68 @@ void emailsetup() {
 void loop() {
   Blynk.run(); // Run Blynk process
   timer.run(); // checks if it's time to call any function scheduled by the timer.
+   String all_command = "";
+
+  WiFiClient client = server.available();
+
+  if (client) {
+    String request = "";
+    while (client.connected()) {
+      if (client.available()) {
+        char c = client.read();
+        request += c;
+        if (c == '\r') {
+          // End of line reached, check if next character is newline
+
+          Serial.println(request);  // full HTTP command line including GET  and HTTP 1
+
+          // Extract command from request string
+          int start = request.indexOf("GET /") + 5;
+          int end = request.indexOf("HTTP/");
+          String command = request.substring(start, end);
+
+          //Purify the command
+          command.replace("\n", "");
+          command.replace("\r", "");
+          command.replace(" ", ""); // removes all space characters
+          command.replace("\t", ""); // removes all tab characters
+          command.trim();
+
+          Serial.println(command);
+
+          all_command =  command + " is on";  // green is on 
+
+
+          if (command.equals("red")) {
+            digitalWrite(SolenoidLock, HIGH);
+
+
+          }
+
+          if (command.equals("green")) {
+            digitalWrite(SolenoidLock, LOW);
+
+
+          }
+
+
+          if (command.equals("blue")) {
+            digitalWrite(SolenoidLock, LOW);
+          }
+
+
+
+          if (client.peek() == '\n') {
+            client.println("HTTP/1.1 200 OK");
+            client.println("Content-type:text/html");
+            client.println();
+            String commandWithTags = "<html><body>" + all_command + "</body></html>";
+            client.println(commandWithTags);
+            break;
+
+          }
+        }
+      }
+    }
+  }
 }
