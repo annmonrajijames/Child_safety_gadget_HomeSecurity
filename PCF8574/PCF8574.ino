@@ -62,7 +62,10 @@ void setup(){
   Serial.println(WiFi.softAPIP());
   pinMode(flameSensor, INPUT); // Set the flame sensor pin as an input
 }
-  
+bool isFlameDetected() {
+  int flameDetected = digitalRead(flameSensor); // Read the flame sensor value
+  return flameDetected == LOW; // Return true if flame is detected
+}  
 void emailsetup() {
   char key = customKeypad.getKey();  // save character pressed 
   if (key != NO_KEY) { // If a key is pressed, add it to the passcode string, NO_KEY is predefined in they keypad library
@@ -122,11 +125,12 @@ void emailsetup() {
       Serial.println("The entered password is " + v_passcode);
     }
   }
+  if (isFlameDetected()) {
+    Blynk.logEvent("password_entry", "Door is on Fire");
+    Serial.println("Flame detected!");    // Flame is detected
+  }
 }
-bool isFlameDetected() {
-  int flameDetected = digitalRead(flameSensor); // Read the flame sensor value
-  return flameDetected == LOW; // Return true if flame is detected
-}
+
 void loop() {
   Blynk.run(); // Run Blynk process
   timer.run(); // checks if it's time to call any function scheduled by the timer.
@@ -193,8 +197,5 @@ void loop() {
         }
       }
     }
-  }
-  if (isFlameDetected()) {
-    Serial.println("Flame detected!");    // Flame is detected
   } 
 }
