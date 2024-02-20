@@ -7,6 +7,7 @@
 #define Buzzer D6
 #define GREEN D7
 #define RED D8
+#define flameSensor D0
 
 char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "Annmon"; // WiFi network name
@@ -59,6 +60,7 @@ void setup(){
   Serial.println("Access Point started");
   Serial.print("IP address: ");
   Serial.println(WiFi.softAPIP());
+  pinMode(flameSensor, INPUT); // Set the flame sensor pin as an input
 }
   
 void emailsetup() {
@@ -120,6 +122,10 @@ void emailsetup() {
       Serial.println("The entered password is " + v_passcode);
     }
   }
+}
+bool isFlameDetected() {
+  int flameDetected = digitalRead(flameSensor); // Read the flame sensor value
+  return flameDetected == LOW; // Return true if flame is detected
 }
 void loop() {
   Blynk.run(); // Run Blynk process
@@ -188,4 +194,7 @@ void loop() {
       }
     }
   }
+  if (isFlameDetected()) {
+    Serial.println("Flame detected!");    // Flame is detected
+  } 
 }
