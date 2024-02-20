@@ -54,14 +54,14 @@ void emailsetup() {
   if (key != NO_KEY) { // If a key is pressed, add it to the passcode string, NO_KEY is predefined in they keypad library
     v_passcode = v_passcode + key; // Append the pressed key to the passcode
 
-    if (key == '*') { // Check if '*' is pressed to reset passcode entry
+    if (key == 'A') { // Check if 'A' is pressed to reset passcode entry
       Serial.println("Enter Password");
       v_passcode = ""; // Reset the passcode
     }
 
-    if (key == '#') {  // Check if '#' is pressed to validate the passcode
+    if (key == 'D') {  // Check if 'D' is pressed to validate the passcode
       Serial.println("Validate the Password");
-      if (v_passcode == "1234#") { // Password is correct
+      if (v_passcode == "1234D") { // Password is correct
        Blynk.logEvent("password_entry", "Your child reached home"); // correct password entry
        Serial.println("Access Granted");
         digitalWrite(SolenoidLock, HIGH); // Unlock the solenoid lock
@@ -71,7 +71,7 @@ void emailsetup() {
         digitalWrite(Buzzer, LOW);  // Turn off buzzer
         digitalWrite(GREEN, LOW);  // Turn off green LED
 
-      } else if (v_passcode == "123#") { 
+      } else if (v_passcode == "123D") { 
       /* Pseudo-password [From outside of the device it will show correct, 
       but it signals SOS to parents]*/
         Blynk.logEvent("password_entry", "Your Child is in danger"); // Child entered SOS code
@@ -81,6 +81,17 @@ void emailsetup() {
         delay(3000); 
         digitalWrite(Buzzer, LOW);  
         digitalWrite(GREEN, LOW);  
+      } else if (v_passcode == "4321D") { // To Unlock the door
+        Blynk.logEvent("password_entry", "Door is Locked now");
+        Serial.println("\nDoor is Locked");
+        digitalWrite(SolenoidLock, LOW); // Lock the solenoid lock
+        digitalWrite(GREEN, HIGH); // Turn on green LED
+        delay(100); // Wait for 1/10 second
+        digitalWrite(GREEN, LOW);  // Turn off green LED
+        delay(100); // Wait for 1/10 second
+        digitalWrite(RED, HIGH); // Red LED On
+        delay(100); // Wait for 1/10 second
+        digitalWrite(RED, LOW); // Red LED Off 
       } else { // Password is wrong
         Blynk.logEvent("password_entry", "Wrong Passcode Entered"); // Wrong password entry
         Serial.println("Access Denied");
