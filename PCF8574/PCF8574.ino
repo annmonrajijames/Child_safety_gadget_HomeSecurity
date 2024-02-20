@@ -3,6 +3,7 @@
 #define BLYNK_AUTH_TOKEN "RDs-5TaFIsxVHn6VEC483jSQKw_JjJ0q"
 #define BLYNK_PRINT Serial
 
+#define SolenoidLock D5
 #define Buzzer D6
 #define GREEN D7
 #define RED D8
@@ -40,6 +41,8 @@ void setup(){
   Blynk.begin(auth, ssid, pass); // Start Blynk using WiFi credentials
   Serial.begin(9600);                     // initialize serial communication
   customKeypad.begin( );                  // initialize matrix keypad
+  pinMode(SolenoidLock, OUTPUT); // Pin connected to the relay controlling the solenoid lock
+  digitalWrite(SolenoidLock, LOW); // Start with the solenoid lock in locked state
   pinMode(Buzzer, OUTPUT); // Buzzer
   pinMode(GREEN, OUTPUT); // Green LED
   pinMode(RED, OUTPUT); // Red LED
@@ -61,6 +64,7 @@ void emailsetup() {
       if (v_passcode == "1234#") { // Password is correct
        Blynk.logEvent("password_entry", "Your child reached home"); // correct password entry
        Serial.println("Access Granted");
+        digitalWrite(SolenoidLock, HIGH); // Unlock the solenoid lock
         digitalWrite(Buzzer, HIGH); // Turn on buzzer
         digitalWrite(GREEN, HIGH); // Turn on green LED
         delay(3000); // Wait for 3 seconds
@@ -71,6 +75,7 @@ void emailsetup() {
       /* Pseudo-password [From outside of the device it will show correct, 
       but it signals SOS to parents]*/
         Blynk.logEvent("password_entry", "Your Child is in danger"); // Child entered SOS code
+        digitalWrite(SolenoidLock, HIGH); // Unlock the solenoid lock
         digitalWrite(Buzzer, HIGH); // Output from device is same as correct password 
         digitalWrite(GREEN, HIGH); 
         delay(3000); 
