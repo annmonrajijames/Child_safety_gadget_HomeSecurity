@@ -26,27 +26,18 @@ void setup() {
 }
 
 void loop() {
-
-  float mainTemp = random(18, 25);
-  float decimalTemp = random(0,99) / 100.0;
-  float temp = mainTemp + decimalTemp;
-  displayTemp(temp);
-  delay(2000);
-  
+  char text[] = "AnnmonisGood";
+  displaytext(text);
 }
-
-void displayTemp(float temp) {
-  display.clearDisplay();
+void displaytext(char text[]) {
   display.display();
-
   display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0,0);
-  display.println("Kitchen Temperature");
+  display.println("Child safety-Home security");
   display.println("---------------------");
-  display.setCursor(28,27);
-  display.setTextSize(3);
-  display.print(temp, 1);
-  display.print((char)247);
+  display.setCursor(0,27);
+  display.setTextSize(1);
+  display.print(text);
   display.display();
 }
