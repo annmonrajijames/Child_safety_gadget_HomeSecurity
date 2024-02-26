@@ -27,9 +27,9 @@ void setup() {
 
 void loop() {
   char text[] = "AnnmonisGood";
-  displaytext(text);
+  OledDisplay(text);
 }
-void displaytext(char text[]) {
+void OledDisplay(char text[]) {
   display.display();
   display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
