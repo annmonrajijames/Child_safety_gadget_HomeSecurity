@@ -89,6 +89,9 @@ void emailsetup() {
 
     if (key == 'A') { // Check if 'A' is pressed to reset passcode entry
       Serial.println("Enter Password");
+      display.clearDisplay();
+      char text[] = "Enter password";
+      OledDisplay(text);
       v_passcode = ""; // Reset the passcode
     }
 
@@ -103,6 +106,7 @@ void emailsetup() {
         delay(3000); // Wait for 3 seconds
         digitalWrite(Buzzer, LOW);  // Turn off buzzer
         digitalWrite(GREEN, LOW);  // Turn off green LED
+        display.clearDisplay();
         char text[] = "Correct password";
         OledDisplay(text);
       } else if (v_passcode == "123D") { 
@@ -115,6 +119,7 @@ void emailsetup() {
         delay(3000); 
         digitalWrite(Buzzer, LOW);  
         digitalWrite(GREEN, LOW);
+        display.clearDisplay();
         char text[] = "Correct password";
         OledDisplay(text);  
       } else if (v_passcode == "4321D") { // To Unlock the door
@@ -128,11 +133,13 @@ void emailsetup() {
         digitalWrite(RED, HIGH); // Red LED On
         delay(100); // Wait for 1/10 second
         digitalWrite(RED, LOW); // Red LED Off 
+        display.clearDisplay();
         char text[] = "Door unlocked";
         OledDisplay(text);
       } else { // Password is wrong
         Blynk.logEvent("password_entry", "Wrong Passcode Entered"); // Wrong password entry
         Serial.println("Access Denied");
+        display.clearDisplay();
         char text[] = "Wrong password";
         OledDisplay(text);
          for (int i = 0; i < 3; i++) {
@@ -151,6 +158,9 @@ void emailsetup() {
   if (isFlameDetected()) {
     Blynk.logEvent("password_entry", "Door is on Fire");
     Serial.println("Flame detected!");    // Flame is detected
+    display.clearDisplay();
+    char text[] = "Door is on Fire";
+    OledDisplay(text);
   }
 }
 void OledDisplay(char text[]) {
