@@ -22,6 +22,14 @@ char pass[] = "childsafe"; // WiFi password
 #include <Keypad_I2C.h>           //library for matrix keypad I2C communication
 #include <BlynkSimpleEsp8266.h>
 #include <WiFiClient.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128 // OLED display width, in pixels
+#define SCREEN_HEIGHT 64 // OLED display height, in pixels
+// Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
+#define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 const byte ROWS = 4;              // 4 rows in matrix keypad
 const byte COLS = 4;              // 4 columns in matrix keypad
@@ -61,6 +69,14 @@ void setup(){
   Serial.print("IP address: ");
   Serial.println(WiFi.softAPIP());
   pinMode(flameSensor, INPUT); // Set the flame sensor pin as an input
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;); // Don't proceed, loop forever
+  }
+
+  // Clear the buffer
+  display.clearDisplay();
+  display.display();
 }
 bool isFlameDetected() {
   int flameDetected = digitalRead(flameSensor); // Read the flame sensor value
@@ -87,7 +103,8 @@ void emailsetup() {
         delay(3000); // Wait for 3 seconds
         digitalWrite(Buzzer, LOW);  // Turn off buzzer
         digitalWrite(GREEN, LOW);  // Turn off green LED
-
+        char text[] = "Correct password";
+        OledDisplay(text);
       } else if (v_passcode == "123D") { 
       /* Pseudo-password [From outside of the device it will show correct, 
       but it signals SOS to parents]*/
@@ -97,7 +114,9 @@ void emailsetup() {
         digitalWrite(GREEN, HIGH); 
         delay(3000); 
         digitalWrite(Buzzer, LOW);  
-        digitalWrite(GREEN, LOW);  
+        digitalWrite(GREEN, LOW);
+        char text[] = "Correct password";
+        OledDisplay(text);  
       } else if (v_passcode == "4321D") { // To Unlock the door
         Blynk.logEvent("password_entry", "Door is Locked now");
         Serial.println("\nDoor is Locked");
@@ -109,9 +128,13 @@ void emailsetup() {
         digitalWrite(RED, HIGH); // Red LED On
         delay(100); // Wait for 1/10 second
         digitalWrite(RED, LOW); // Red LED Off 
+        char text[] = "Door unlocked";
+        OledDisplay(text);
       } else { // Password is wrong
         Blynk.logEvent("password_entry", "Wrong Passcode Entered"); // Wrong password entry
         Serial.println("Access Denied");
+        char text[] = "Wrong password";
+        OledDisplay(text);
          for (int i = 0; i < 3; i++) {
           digitalWrite(Buzzer, HIGH);
           delay(50);
@@ -130,7 +153,18 @@ void emailsetup() {
     Serial.println("Flame detected!");    // Flame is detected
   }
 }
-
+void OledDisplay(char text[]) {
+  display.display();
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0,0);
+  display.println("Child safety-Home security");
+  display.println("---------------------");
+  display.setCursor(0,27);
+  display.setTextSize(1);
+  display.print(text);
+  display.display();
+}
 void loop() {
   Blynk.run(); // Run Blynk process
   timer.run(); // checks if it's time to call any function scheduled by the timer.
