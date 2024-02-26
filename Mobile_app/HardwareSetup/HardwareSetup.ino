@@ -153,6 +153,9 @@ void emailsetup() {
           digitalWrite(RED,LOW);
       }
       Serial.println("The entered password is " + v_passcode);
+      delay(5000); // To prevent OLED ON for infinite time 
+      display.clearDisplay();
+      display.display();
     }
   }
   if (isFlameDetected()) {
