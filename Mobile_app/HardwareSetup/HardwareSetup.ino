@@ -215,22 +215,23 @@ void loop() {
 
           if (command.equals("red")) {
             digitalWrite(SolenoidLock, HIGH);
-
-
+            display.clearDisplay();
+            char text[] = "Door unlocked by App";
+            OledDisplay(text);
+            delay(5000); // To prevent OLED ON for infinite time 
+            display.clearDisplay();
+            display.display();
           }
 
           if (command.equals("green")) {
             digitalWrite(SolenoidLock, LOW);
-
-
+            display.clearDisplay();
+            char text[] = "Door locked by App";
+            OledDisplay(text);
+            delay(5000); // To prevent OLED ON for infinite time 
+            display.clearDisplay();
+            display.display();
           }
-
-
-          if (command.equals("blue")) {
-            digitalWrite(SolenoidLock, LOW);
-          }
-
-
 
           if (client.peek() == '\n') {
             client.println("HTTP/1.1 200 OK");
