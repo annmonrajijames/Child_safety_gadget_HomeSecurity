@@ -1,0 +1,194 @@
+[
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_chat.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\chat.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_calendar.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\calendar.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_health1.jpeg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\health1.jpeg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-anydpi-v33_ic_launcher.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-anydpi-v33\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_ic_baseline_security_24.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\ic_baseline_security_24.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_ic_baseline_person_24.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\ic_baseline_person_24.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_input_bg.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\input_bg.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_widgets.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\widgets.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_health4.jpeg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\health4.jpeg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\layout_activity_google_drive.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\layout\\activity_google_drive.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_surgeon.jpeg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\surgeon.jpeg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\layout_activity_home.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_language.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\language.xml"
+    },
+    {
+        "merged": "com.example.you_tube_wifi_app-merged_res-28:/layout_activity_google_drive.xml.flat",
+        "source": "com.example.you_tube_wifi_app-main-30:/layout/activity_google_drive.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_health3.jpeg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\health3.jpeg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_dietician.jpg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\dietician.jpg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_background.jpg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\background.jpg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_back1.jpg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\back1.jpg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_health2.jpeg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\health2.jpeg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_back2.jpg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\back2.jpg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_health5.jpeg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\health5.jpeg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\layout_activity_register.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_cardiologists.jpg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\cardiologists.jpg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_home_screen.jpg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\home_screen.jpg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\xml_backup_rules.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_btn_bg.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\btn_bg.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_family_physicians.jpg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\family_physicians.jpg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_ic_baseline_email_24.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\ic_baseline_email_24.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\layout_activity_login.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_info.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\info.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_dentist.jpg.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\dentist.jpg"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\drawable_home.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\drawable\\home.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\layout_operating_page.xml.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\layout\\operating_page.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-merged_res-28:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\AndroidStudio_Projects\\androidhealthcare\\daemon\\8.2\\com.example.you_tube_wifi_app-main-30:\\mipmap-hdpi\\ic_launcher.webp"
+    }
+]

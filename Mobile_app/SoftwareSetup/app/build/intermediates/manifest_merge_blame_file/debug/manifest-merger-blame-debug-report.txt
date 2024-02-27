@@ -1,0 +1,129 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.you_tube_wifi_app"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="33" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+12-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:6:5-76
+12-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:6:22-73
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:7:5-79
+13-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:7:22-76
+14    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+14-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:8:5-76
+14-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:8:22-73
+15    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+15-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:9:5-79
+15-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:9:22-76
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:5:5-67
+16-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:5:22-64
+17
+18    <permission
+18-->[androidx.core:core:1.9.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\a309491863f1cad1388d82071cb60f8c\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+19        android:name="com.example.you_tube_wifi_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+19-->[androidx.core:core:1.9.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\a309491863f1cad1388d82071cb60f8c\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+20        android:protectionLevel="signature" />
+20-->[androidx.core:core:1.9.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\a309491863f1cad1388d82071cb60f8c\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+21
+22    <uses-permission android:name="com.example.you_tube_wifi_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+22-->[androidx.core:core:1.9.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\a309491863f1cad1388d82071cb60f8c\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+22-->[androidx.core:core:1.9.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\a309491863f1cad1388d82071cb60f8c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+23
+24    <application
+24-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:12:5-43:19
+25        android:allowBackup="true"
+25-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:13:9-35
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.9.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\a309491863f1cad1388d82071cb60f8c\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+27        android:dataExtractionRules="@xml/data_extraction_rules"
+27-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:14:9-65
+28        android:debuggable="true"
+29        android:extractNativeLibs="false"
+30        android:fullBackupContent="@xml/backup_rules"
+30-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:15:9-54
+31        android:icon="@mipmap/ic_launcher"
+31-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:16:9-43
+32        android:label="@string/app_name"
+32-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:17:9-41
+33        android:supportsRtl="true"
+33-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:18:9-35
+34        android:testOnly="true"
+35        android:theme="@style/Theme.You_Tube_WIFI_APP"
+35-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:19:9-55
+36        android:usesCleartextTraffic="true" >
+36-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:20:9-44
+37        <activity
+37-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:22:9-24:40
+38            android:name="com.example.you_tube_wifi_app.GoogleDrive"
+38-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:23:13-40
+39            android:exported="false" />
+39-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:24:13-37
+40        <activity
+40-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:25:9-27:40
+41            android:name="com.example.you_tube_wifi_app.RegisterActivity"
+41-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:26:13-45
+42            android:exported="false" />
+42-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:27:13-37
+43        <activity
+43-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:28:9-30:40
+44            android:name="com.example.you_tube_wifi_app.HomeActivity"
+44-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:29:13-41
+45            android:exported="false" />
+45-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:30:13-37
+46        <activity
+46-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:31:9-33:40
+47            android:name="com.example.you_tube_wifi_app.OperatingPage"
+47-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:32:13-42
+48            android:exported="false" />
+48-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:33:13-37
+49        <activity
+49-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:34:9-42:20
+50            android:name="com.example.you_tube_wifi_app.LoginActivity"
+50-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:35:13-42
+51            android:exported="true" >
+51-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:36:13-36
+52            <intent-filter>
+52-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:37:13-41:29
+53                <action android:name="android.intent.action.MAIN" />
+53-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:38:17-69
+53-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:38:25-66
+54
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:40:17-77
+55-->C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\src\main\AndroidManifest.xml:40:27-74
+56            </intent-filter>
+57        </activity>
+58
+59        <provider
+59-->[androidx.emoji2:emoji2:1.2.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\6db5aa862a49de8667f2a7b9b0bf2022\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+60            android:name="androidx.startup.InitializationProvider"
+60-->[androidx.emoji2:emoji2:1.2.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\6db5aa862a49de8667f2a7b9b0bf2022\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+61            android:authorities="com.example.you_tube_wifi_app.androidx-startup"
+61-->[androidx.emoji2:emoji2:1.2.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\6db5aa862a49de8667f2a7b9b0bf2022\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+62            android:exported="false" >
+62-->[androidx.emoji2:emoji2:1.2.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\6db5aa862a49de8667f2a7b9b0bf2022\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+63            <meta-data
+63-->[androidx.emoji2:emoji2:1.2.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\6db5aa862a49de8667f2a7b9b0bf2022\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+64                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+64-->[androidx.emoji2:emoji2:1.2.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\6db5aa862a49de8667f2a7b9b0bf2022\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+65                android:value="androidx.startup" />
+65-->[androidx.emoji2:emoji2:1.2.0] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\6db5aa862a49de8667f2a7b9b0bf2022\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+66            <meta-data
+66-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\b7bd10e3360a468a9b79e7dca2ad5240\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+67                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+67-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\b7bd10e3360a468a9b79e7dca2ad5240\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+68                android:value="androidx.startup" />
+68-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\b7bd10e3360a468a9b79e7dca2ad5240\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+69        </provider>
+70    </application>
+71
+72</manifest>

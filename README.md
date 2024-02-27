@@ -140,21 +140,27 @@ Extra components required:- 1 channel relay, Solenoid lock, Power adapter.
 ![Alt text](Resources/Lockmodule.jpeg)
 
 Wiring connection of 1 channel relay \
-NO (Normally Open) -->Solenoid lock \
-COM (Common)--> Power supply adapter \
+NO (Normally Open) -->Solenoid lock's +ve terminal \
+COM (Common)--> Power supply adapter's +ve terminal \
 NC (Normally Closed) --> Left unconnected \
 INP --> D6 of ESP8266 microcontroller \
 V+ --> 3V3 of ESP8266 microcontroller \
 GND --> GND of ESP8266 microcontrller \
 
-Relay to Solenoid Lock: \
-NO (Normally Open): Connected to one terminal of the solenoid lock. \
-COM (Common): Connected to the positive (+) terminal of the 12V power supply. The other terminal of the solenoid lock connects to the negative (-) terminal of the power supply. \
 
 Relay to ESP8266: \
 INP (Input): Connected to pin D6 of the ESP8266. This pin controls the relay, and thereby the solenoid lock. \
 V+: Connected to the 3V3 (3.3 volts) pin of the ESP8266. This supplies power to the relay. \
 GND (Ground): Connected to a GND pin on the ESP8266 to complete the circuit. \
+
+Relay to Solenoid Lock: \
+NO (Normally Open): Connected to positive terminal of the solenoid lock. \
+COM (Common): Connected to the positive (+) terminal of the 12V power supply. The negative terminal of the solenoid lock connects to the negative (-) terminal of the power supply. \
+
+My observation:- 
+If you connect COM of relay channel to the positive terminal of the 12V power supply then you must connect negative terminal of the solenoid lock to the negative terminal of the 12 Volt \
+-OR-
+If you connect COM of relay channel to the negative terminal of the 12V power supply then you must connect negative terminal of the solenoid lock to the positive terminal of the 12 Volt \
 
 1-Channel Relay: Serves as an electrically operated switch that allows the ESP8266 to control the solenoid lock, which operates at a higher voltage than the ESP8266 can handle directly.
 ![Alt text](Resources/1channelrelay.jpeg)
