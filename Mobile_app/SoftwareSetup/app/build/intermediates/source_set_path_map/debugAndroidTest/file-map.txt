@@ -1,6 +1,0 @@
-com.example.you_tube_wifi_app.test.app-jetified-core-1.5.0-0 C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\0b5badf7fade70ff245aa2adc82a4568\transformed\jetified-core-1.5.0\res
-com.example.you_tube_wifi_app.test.app-jetified-annotation-experimental-1.3.0-1 C:\AndroidStudio_Projects\androidhealthcare\caches\transforms-3\4e507413af5f3d3f2ccec8faf9fb58f3\transformed\jetified-annotation-experimental-1.3.0\res
-com.example.you_tube_wifi_app.test.app-androidTest-2 C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\build\generated\res\resValues\androidTest\debug
-com.example.you_tube_wifi_app.test.app-mergeDebugAndroidTestResources-3 C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.example.you_tube_wifi_app.test.app-mergeDebugAndroidTestResources-4 C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.example.you_tube_wifi_app.test.app-merged_res-5 C:\Git_Pro\Child_safety_gadget_HomeSecurity\Mobile_app\SoftwareSetup\app\build\intermediates\merged_res\debugAndroidTest

@@ -1,3 +1,0 @@
-com.example.you_tube_wifi_app.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme
