@@ -6,8 +6,6 @@ void setup(){
 }
 void loop(){
   long measurement =vibration();
-  delay(50);
-  Serial.println(measurement);
   if (measurement > 50){
     Serial.println("Your door is vibrating");
   }
