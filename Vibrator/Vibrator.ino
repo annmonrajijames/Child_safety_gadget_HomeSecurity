@@ -1,9 +1,7 @@
-int led = 13;
-int vs =9; // vibration sensor
+#define VibrationSensor D4
 
 void setup(){
-  pinMode(led, OUTPUT);
-  pinMode(vs, INPUT); 
+  pinMode(VibrationSensor, INPUT); 
   Serial.begin(9600); 
 
 }
@@ -12,14 +10,14 @@ void loop(){
   delay(50);
   Serial.println(measurement);
   if (measurement > 50){
-    digitalWrite(led, HIGH);
+    Serial.println("Door vibrated");
   }
   else{
-    digitalWrite(led, LOW); e
+    Serial.println("Door not vibrated");
   }
 }
 
 long vibration(){
-  long measurement=pulseIn (vs, HIGH);  //wait for the pin to get HIGH and returns measurement
+  long measurement=pulseIn (VibrationSensor, HIGH);  //wait for the pin to get HIGH and returns measurement
   return measurement;
 }
