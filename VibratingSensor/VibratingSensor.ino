@@ -1,4 +1,4 @@
-#define VibratingSensor D3
+#define VibratingSensor D3 // Only D3 and D4 pins left in my microcontroller, rest all used
 void setup(){
   pinMode(VibratingSensor, INPUT); 
   Serial.begin(9600); 
