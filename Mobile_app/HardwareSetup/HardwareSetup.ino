@@ -1,6 +1,6 @@
-#define BLYNK_TEMPLATE_ID "TMPL3gxKbEIS5" // Blynk template and authentication information
-#define BLYNK_TEMPLATE_NAME "HomeSecurity"
-#define BLYNK_AUTH_TOKEN "RDs-5TaFIsxVHn6VEC483jSQKw_JjJ0q"
+#define BLYNK_TEMPLATE_ID "TMPL3smJ6LQi_"
+#define BLYNK_TEMPLATE_NAME "ChildSafetyHomeSecurity"
+#define BLYNK_AUTH_TOKEN "2VPCT_E0rvrpHUH5fFuuG2925vhQU7jg"
 #define BLYNK_PRINT Serial
 
 #define SolenoidLock D5
@@ -98,7 +98,7 @@ void emailsetup() {
     if (key == 'D') {  // Check if 'D' is pressed to validate the passcode
       Serial.println("Validate the Password");
       if (v_passcode == "1234D") { // Password is correct
-       Blynk.logEvent("password_entry", "Your child reached home"); // correct password entry
+       Blynk.logEvent("childhomeemail", "Your child reached home"); // correct password entry
        Serial.println("Access Granted");
         digitalWrite(SolenoidLock, HIGH); // Unlock the solenoid lock
         digitalWrite(Buzzer, HIGH); // Turn on buzzer
@@ -112,7 +112,7 @@ void emailsetup() {
       } else if (v_passcode == "123D") { 
       /* Pseudo-password [From outside of the device it will show correct, 
       but it signals SOS to parents]*/
-        Blynk.logEvent("password_entry", "Your Child is in danger"); // Child entered SOS code
+        Blynk.logEvent("childhomeemail", "Your Child is in danger"); // Child entered SOS code
         digitalWrite(SolenoidLock, HIGH); // Unlock the solenoid lock
         digitalWrite(Buzzer, HIGH); // Output from device is same as correct password 
         digitalWrite(GREEN, HIGH); 
@@ -123,7 +123,7 @@ void emailsetup() {
         char text[] = "Correct password";
         OledDisplay(text);  
       } else if (v_passcode == "4321D") { // To Unlock the door
-        Blynk.logEvent("password_entry", "Door is Locked now");
+        Blynk.logEvent("childhomeemail", "Door is Locked now");
         Serial.println("\nDoor is Locked");
         digitalWrite(SolenoidLock, LOW); // Lock the solenoid lock
         digitalWrite(GREEN, HIGH); // Turn on green LED
@@ -137,7 +137,7 @@ void emailsetup() {
         char text[] = "Door unlocked";
         OledDisplay(text);
       } else { // Password is wrong
-        Blynk.logEvent("password_entry", "Wrong Passcode Entered"); // Wrong password entry
+        Blynk.logEvent("childhomeemail", "Wrong Passcode Entered"); // Wrong password entry
         Serial.println("Access Denied");
         display.clearDisplay();
         char text[] = "Wrong password";
@@ -159,7 +159,7 @@ void emailsetup() {
     }
   }
   if (isFlameDetected()) {
-    Blynk.logEvent("password_entry", "Door is on Fire");
+    Blynk.logEvent("childhomeemail", "Door is on Fire");
     Serial.println("Flame detected!");    // Flame is detected
     display.clearDisplay();
     char text[] = "Door is on Fire";
