@@ -134,7 +134,7 @@ void emailsetup() {
         delay(100); // Wait for 1/10 second
         digitalWrite(RED, LOW); // Red LED Off 
         display.clearDisplay();
-        char text[] = "Door unlocked";
+        char text[] = "Door Locked";
         OledDisplay(text);
       } else { // Password is wrong
         Blynk.logEvent("childhomeemail", "Wrong Passcode Entered"); // Wrong password entry
