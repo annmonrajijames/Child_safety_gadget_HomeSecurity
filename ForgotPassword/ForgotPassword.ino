@@ -31,39 +31,30 @@ void loop(){
   char key = keypad.getKey();
 
   if (key != NO_KEY){
-    Serial.print(key);
-    
-    // Check if we're in change password mode
-    if(changePasswordMode) {
-      // If '#' is pressed, save the new password and exit change password mode
-      if(key == '#') {
+    // If '#' is pressed, process the entered password or change password
+    if(key == '#') {
+      if(changePasswordMode) {
+        // Change the password
         password = enteredPassword;
         changePasswordMode = false;
         Serial.println("\nNew password set.");
-        enteredPassword = ""; // Reset for next password entry
       } else {
-        // Append the pressed key to the new password
-        enteredPassword += key;
-      }
-    } else {
-      // If '0' is pressed, enable change password mode
-      if(key == '0') {
-        changePasswordMode = true;
-        enteredPassword = ""; // Reset to start new password entry
-        Serial.println("\nEnter new password followed by '#'.");
-      } else {
-        // Normal password checking
-        enteredPassword += key;
-        if (enteredPassword.length() == password.length()) {
-          if (enteredPassword == password) {
-            Serial.println("\nPassword Correct");
-            // Add action here (unlock door, turn on light, etc.)
-          } else {
-            Serial.println("\nPassword Incorrect");
-          }
-          enteredPassword = ""; // Reset entered password
+        // Check the entered password
+        if (enteredPassword == password) {
+          Serial.println("\nPassword Correct");
+          // Add action here (unlock door, turn on light, etc.)
+        } else {
+          Serial.println("\nPassword Incorrect");
         }
       }
+      enteredPassword = ""; // Reset for next password entry
+    } else if(key == '0' && !changePasswordMode && enteredPassword.length() == 0) {
+      // Enter change password mode only if '0' is the first key pressed
+      changePasswordMode = true;
+      Serial.println("\nEnter new password followed by '#'.");
+    } else {
+      // Append the pressed key to the entered password
+      enteredPassword += key;
     }
   }
 }
