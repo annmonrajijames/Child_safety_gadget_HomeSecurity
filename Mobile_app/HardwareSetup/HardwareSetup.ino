@@ -98,7 +98,7 @@ void emailsetup() {
       display.clearDisplay();
       String text = "Enter password";
       OledDisplay(text);
-    } else if (key == '0' && !verifyMode && changePasswordStep == 0) {
+    } else if (key == 'C' && !verifyMode && changePasswordStep == 0) {
       randomPassword = String(random(1000, 10000));
       String SecretMessage= "OTP (One time password) is " + String(randomPassword);
       Blynk.logEvent("childhomeemail", SecretMessage);
@@ -187,6 +187,9 @@ void checkPasswords(char key) {
         display.clearDisplay();
         String text = "Correct password";
         OledDisplay(text);
+        delay(5000); // To prevent OLED ON for infinite time 
+        display.clearDisplay();
+        display.display();
       }
       if (enteredPassword == passwords[1]) {
         Blynk.logEvent("childhomeemail", "Your Child is in danger"); // Child entered SOS code
@@ -200,7 +203,10 @@ void checkPasswords(char key) {
         digitalWrite(GREEN, LOW);
         display.clearDisplay();
         String text = "Correct password";
-        OledDisplay(text);  
+        OledDisplay(text);
+        delay(5000); // To prevent OLED ON for infinite time 
+        display.clearDisplay();
+        display.display();  
       }
       if (enteredPassword == passwords[2]) {
         Blynk.logEvent("childhomeemail", "Door Locked");      
@@ -217,6 +223,9 @@ void checkPasswords(char key) {
         display.clearDisplay();
         String text = "Door Locked";
         OledDisplay(text);
+        delay(5000); // To prevent OLED ON for infinite time 
+        display.clearDisplay();
+        display.display();
       }
 
     if (!passwordMatched) {
@@ -234,6 +243,9 @@ void checkPasswords(char key) {
       display.clearDisplay();
       String text = "Wrong password";
       OledDisplay(text);
+      delay(5000); // To prevent OLED ON for infinite time 
+      display.clearDisplay();
+      display.display();
     }
     enteredPassword = ""; // Reset entered password
   } else {
@@ -252,6 +264,7 @@ void OledDisplay(String text) {
   display.print(text);
   display.display();
 }
+
 void loop() {
   Blynk.run(); // Run Blynk process
   timer.run(); // checks if it's time to call any function scheduled by the timer.
