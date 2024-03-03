@@ -46,7 +46,12 @@ byte colPins[COLS] = {4, 5, 6, 7}; // column pins connected to I2C module
 
 // object for matrix keypad
 Keypad_I2C customKeypad( makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS, I2CADDR); 
-String v_passcode="";
+String passwords[3] = {"1234", "5678", "5454"}; // Default passwords for Secret 1, 2, and 3
+
+String enteredPassword;
+bool verifyMode = false; // Indicates if the system is in verification mode
+int changePasswordStep = 0; // Tracks the step in the change password sequence
+String randomPassword = "";
 BlynkTimer timer; // timer object created, BlynkTimer is a class.
 
 const char* ap_ssid = "Annmon_ESP_Hotspot";
@@ -62,6 +67,7 @@ void setup(){
   pinMode(Buzzer, OUTPUT); // Buzzer
   pinMode(GREEN, OUTPUT); // Green LED
   pinMode(RED, OUTPUT); // Red LED
+  randomSeed(analogRead(0)); // Initialize random number generator
   timer.setInterval(1L, emailsetup); // Set timer to call emailsetup function every 1 second
   WiFi.softAP(ap_ssid, ap_password); 
   server.begin();
@@ -78,28 +84,85 @@ void setup(){
   display.clearDisplay();
   display.display();
 }
-bool isFlameDetected() {
-  //int flameDetected = digitalRead(flameSensor); // Read the flame sensor value
+/*bool isFlameDetected() {
+  int flameDetected = digitalRead(flameSensor); // Read the flame sensor value
   return flameDetected == LOW; // Return true if flame is detected
-}  
+}*/  
 void emailsetup() {
   char key = customKeypad.getKey();  // save character pressed 
-  if (key != NO_KEY) { // If a key is pressed, add it to the passcode string, NO_KEY is predefined in they keypad library
-    v_passcode = v_passcode + key; // Append the pressed key to the passcode
 
-    if (key == 'A') { // Check if 'A' is pressed to reset passcode entry
-      Serial.println("Enter Password");
+  if (key != NO_KEY) {
+    if (key == 'A') {
+      enteredPassword = "";
+      Serial.println("\nEnter password:");
       display.clearDisplay();
       char text[] = "Enter password";
       OledDisplay(text);
-      v_passcode = ""; // Reset the passcode
+    } else if (key == '0' && !verifyMode && changePasswordStep == 0) {
+      randomPassword = String(random(1000, 10000));
+      String SecretMessage= "OTP (One time password) is " + String(randomPassword);
+      Blynk.logEvent("childhomeemail", SecretMessage);
+      Serial.print("\nEnter the OTP (One Time Password): ");
+      verifyMode = true;
+      enteredPassword = "";
+    } else if (verifyMode) {
+      verifyRandomPassword(key);
+    } else if (changePasswordStep > 0) {
+      setNewPasswords(key);
+    } else {
+      checkPasswords(key);
     }
+  }
+  /*if (isFlameDetected()) {
+    Blynk.logEvent("childhomeemail", "Door is on Fire");
+    Serial.println("Flame detected!");    // Flame is detected
+    display.clearDisplay();
+    char text[] = "Door is on Fire";
+    OledDisplay(text);
+  }*/
+}
 
-    if (key == 'D') {  // Check if 'D' is pressed to validate the passcode
-      Serial.println("Validate the Password");
-      if (v_passcode == "1234D") { // Password is correct
-       Blynk.logEvent("childhomeemail", "Your child reached home"); // correct password entry
-       Serial.println("Access Granted");
+void verifyRandomPassword(char key) {
+  if (key != 'D') {
+    enteredPassword += key;
+  } else {
+    if (enteredPassword == randomPassword) {
+      Serial.println("\nNumber Verified. Proceed to set new passwords.");
+      verifyMode = false;
+      changePasswordStep = 1; // Proceed to change passwords for Secret 1
+    } else {
+      Serial.println("\nVerification Failed. Try again.");
+      verifyMode = false;
+    }
+    enteredPassword = "";
+  }
+}
+
+void setNewPasswords(char key) {
+  if (key != 'D') {
+    enteredPassword += key;
+  } else {
+    passwords[changePasswordStep - 1] = enteredPassword;
+    Serial.print("\nNew password for Secret ");
+    Serial.print(changePasswordStep);
+    Serial.println(" set.");
+    enteredPassword = "";
+    changePasswordStep++;
+    if (changePasswordStep > 3) {
+      changePasswordStep = 0; // Reset after setting all new passwords
+      Serial.println("\nAll new passwords are set.");
+    }
+  }
+}
+
+void checkPasswords(char key) {
+  if (key == 'D') {
+    bool passwordMatched = false;
+
+      if (enteredPassword == passwords[0]) {
+        Blynk.logEvent("childhomeemail", "Your child reached home"); // correct password entry
+        Serial.print("\nPassword Correct");
+        passwordMatched = true;
         digitalWrite(SolenoidLock, HIGH); // Unlock the solenoid lock
         digitalWrite(Buzzer, HIGH); // Turn on buzzer
         digitalWrite(GREEN, HIGH); // Turn on green LED
@@ -109,10 +172,11 @@ void emailsetup() {
         display.clearDisplay();
         char text[] = "Correct password";
         OledDisplay(text);
-      } else if (v_passcode == "123D") { 
-      /* Pseudo-password [From outside of the device it will show correct, 
-      but it signals SOS to parents]*/
+      }
+      if (enteredPassword == passwords[1]) {
         Blynk.logEvent("childhomeemail", "Your Child is in danger"); // Child entered SOS code
+        Serial.print("\nPassword Correct");
+        passwordMatched = true;
         digitalWrite(SolenoidLock, HIGH); // Unlock the solenoid lock
         digitalWrite(Buzzer, HIGH); // Output from device is same as correct password 
         digitalWrite(GREEN, HIGH); 
@@ -122,9 +186,11 @@ void emailsetup() {
         display.clearDisplay();
         char text[] = "Correct password";
         OledDisplay(text);  
-      } else if (v_passcode == "4321D") { // To Unlock the door
-        Blynk.logEvent("childhomeemail", "Door is Locked now");
-        Serial.println("\nDoor is Locked");
+      }
+      if (enteredPassword == passwords[2]) {
+        Blynk.logEvent("childhomeemail", "Door Locked");      
+        Serial.print("\nDoor Locked");
+        passwordMatched = true;
         digitalWrite(SolenoidLock, LOW); // Lock the solenoid lock
         digitalWrite(GREEN, HIGH); // Turn on green LED
         delay(100); // Wait for 1/10 second
@@ -136,34 +202,15 @@ void emailsetup() {
         display.clearDisplay();
         char text[] = "Door Locked";
         OledDisplay(text);
-      } else { // Password is wrong
-        Blynk.logEvent("childhomeemail", "Wrong Passcode Entered"); // Wrong password entry
-        Serial.println("Access Denied");
-        display.clearDisplay();
-        char text[] = "Wrong password";
-        OledDisplay(text);
-         for (int i = 0; i < 3; i++) {
-          digitalWrite(Buzzer, HIGH);
-          delay(50);
-          digitalWrite(Buzzer, LOW);
-          delay(50);
-        }
-          digitalWrite(RED,HIGH);
-          delay(2000);
-          digitalWrite(RED,LOW);
       }
-      Serial.println("The entered password is " + v_passcode);
-      delay(5000); // To prevent OLED ON for infinite time 
-      display.clearDisplay();
-      display.display();
+
+    if (!passwordMatched) {
+      Blynk.logEvent("childhomeemail", "Someone entered wrong password"); 
+      Serial.println("\nPassword Incorrect");
     }
-  }
-  if (isFlameDetected()) {
-    Blynk.logEvent("childhomeemail", "Door is on Fire");
-    Serial.println("Flame detected!");    // Flame is detected
-    display.clearDisplay();
-    char text[] = "Door is on Fire";
-    OledDisplay(text);
+    enteredPassword = ""; // Reset entered password
+  } else {
+    enteredPassword += key;
   }
 }
 void OledDisplay(char text[]) {
