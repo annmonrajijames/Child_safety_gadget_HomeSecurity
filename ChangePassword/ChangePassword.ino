@@ -1,4 +1,15 @@
+#define BLYNK_TEMPLATE_ID "TMPL3gxKbEIS5" // Blynk template and authentication information
+#define BLYNK_TEMPLATE_NAME "HomeSecurity"
+#define BLYNK_AUTH_TOKEN "RDs-5TaFIsxVHn6VEC483jSQKw_JjJ0q"
+#define BLYNK_PRINT Serial
+
+char auth[] = BLYNK_AUTH_TOKEN;
+char ssid[] = "Annmon"; // WiFi network name
+char pass[] = "childsafe"; // WiFi password
+
+#include <ESP8266WiFi.h>
 #include <Keypad.h>
+#include <BlynkSimpleEsp8266.h>
 
 const byte ROWS = 4; // Four rows
 const byte COLS = 3; // Three columns
@@ -24,13 +35,16 @@ String enteredPassword;
 bool verifyMode = false; // Indicates if the system is in verification mode
 int changePasswordStep = 0; // Tracks the step in the change password sequence
 String randomPassword = "";
+BlynkTimer timer; // timer object created, BlynkTimer is a class.
 
 void setup() {
+  Blynk.begin(auth, ssid, pass); // Start Blynk using WiFi credentials
   Serial.begin(9600);
   randomSeed(analogRead(0)); // Initialize random number generator
+  timer.setInterval(1L, emailsetup); // Set timer to call emailsetup function every 1 second
 }
 
-void loop() {
+void emailsetup() {
   char key = keypad.getKey();
 
   if (key != NO_KEY) {
@@ -39,8 +53,9 @@ void loop() {
       Serial.println("\nEnter password:");
     } else if (key == '0' && !verifyMode && changePasswordStep == 0) {
       randomPassword = String(random(1000, 10000));
-      Serial.print("\nEnter the number: ");
-      Serial.println(randomPassword);
+      String SecretMessage= "OTP (One time password) is " + String(randomPassword);
+      Blynk.logEvent("password_entry", SecretMessage);
+      Serial.print("\nEnter the OTP (One Time Password): ");
       verifyMode = true;
       enteredPassword = "";
     } else if (verifyMode) {
@@ -91,23 +106,31 @@ void checkPasswords(char key) {
     bool passwordMatched = false;
 
       if (enteredPassword == passwords[0]) {
+        Blynk.logEvent("password_entry", "Your child reached home"); // correct password entry
         Serial.print("\nPassword Correct- Secret 1");
         passwordMatched = true;
       }
       if (enteredPassword == passwords[1]) {
+        Blynk.logEvent("password_entry", "Your Child is in danger"); // Child entered SOS code
         Serial.print("\nPassword Correct- Secret 2");
         passwordMatched = true;
       }
       if (enteredPassword == passwords[2]) {
+        Blynk.logEvent("password_entry", "Door locked");      
         Serial.print("\nPassword Correct- Secret 3");
         passwordMatched = true;
       }
 
     if (!passwordMatched) {
+      Blynk.logEvent("password_entry", "Password incorrect"); 
       Serial.println("\nPassword Incorrect");
     }
     enteredPassword = ""; // Reset entered password
   } else {
     enteredPassword += key;
   }
+}
+void loop() {
+  Blynk.run(); // Run Blynk process
+  timer.run(); // checks if it's time to call any function scheduled by the timer.
 }
