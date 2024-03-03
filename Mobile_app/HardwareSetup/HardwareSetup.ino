@@ -156,13 +156,16 @@ void setNewPasswords(char key) {
     Serial.print(changePasswordStep);
     Serial.println(" set.");
     display.clearDisplay();
-    String text = "New password for case" + String(changePasswordStep);
+    String text = "Password #" + String(changePasswordStep)+ " Set";
     OledDisplay(text);
     enteredPassword = "";
     changePasswordStep++;
     if (changePasswordStep > 3) {
       changePasswordStep = 0; // Reset after setting all new passwords
       Serial.println("\nAll new passwords are set.");
+      display.clearDisplay();
+      String text = "All new passwords are set";
+      OledDisplay(text);
     }
   }
 }
@@ -219,6 +222,18 @@ void checkPasswords(char key) {
     if (!passwordMatched) {
       Blynk.logEvent("childhomeemail", "Someone entered wrong password"); 
       Serial.println("\nPassword Incorrect");
+      for (int i = 0; i < 3; i++) {
+          digitalWrite(Buzzer, HIGH);
+          delay(50);
+          digitalWrite(Buzzer, LOW);
+          delay(50);
+        }
+      digitalWrite(RED,HIGH);
+      delay(2000);
+      digitalWrite(RED,LOW);
+      display.clearDisplay();
+      String text = "Wrong password";
+      OledDisplay(text);
     }
     enteredPassword = ""; // Reset entered password
   } else {
