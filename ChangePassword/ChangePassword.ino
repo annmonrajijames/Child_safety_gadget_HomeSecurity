@@ -21,48 +21,75 @@ Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
 String password = "1234"; // Default password
 String enteredPassword;
-bool changePasswordMode = false;
+bool verifyMode = false; // Indicates if the system is in verification mode
+bool changePasswordMode = false; // Indicates if the system is in password change mode
+String randomPassword = "";
 
 void setup(){
   Serial.begin(9600);
+  randomSeed(analogRead(0)); // Initialize random number generator
 }
 
 void loop(){
   char key = keypad.getKey();
 
   if (key != NO_KEY){
-    // If '*' is pressed, reset the entered password
+    // Reset the entered password if '*' is pressed
     if(key == '*') {
       enteredPassword = "";
       Serial.println("\nEnter password:");
     }
-    // If '#' is pressed, check or set the password
-    else if(key == '#') {
-      if(changePasswordMode) {
+    // Enter verify mode if '0' is pressed
+    else if(key == '0' && !verifyMode && !changePasswordMode) {
+      randomPassword = String(random(1000, 10000)); // Generate 4-digit random number
+      Serial.print("\nEnter the number: "); // Enter the OTP (One-time password)
+      Serial.println(randomPassword); // Debug: Show the random number
+      verifyMode = true;
+      enteredPassword = ""; // Clear enteredPassword for new input
+    }
+    // Handle number verification
+    else if(verifyMode) {
+      if(key != '#') {
+        enteredPassword += key; // Append key to enteredPassword if not '#'
+      } else {
+        // Check if entered number matches the random number
+        if(enteredPassword == randomPassword) {
+          Serial.println("\nNumber Verified. Enter new password followed by '#'.");
+          verifyMode = false;
+          changePasswordMode = true;
+          enteredPassword = ""; // Clear for new password entry
+        } else {
+          Serial.println("\nVerification Failed. Try again.");
+          verifyMode = false;
+          enteredPassword = ""; // Reset for a new attempt
+        }
+      }
+    }
+    // Handle new password setup
+    else if(changePasswordMode) {
+      if(key != '#') {
+        enteredPassword += key; // Append key to enteredPassword if not '#'
+      } else {
         // Set the new password and exit change password mode
         password = enteredPassword;
         changePasswordMode = false;
-        enteredPassword = "";
         Serial.println("\nNew password set.");
+        enteredPassword = ""; // Clear after setting new password
+      }
+    }
+    // Normal password entry mode
+    else if (!verifyMode && !changePasswordMode) {
+      if(key != '#') {
+        enteredPassword += key;
       } else {
         // Check the entered password
         if(enteredPassword == password) {
           Serial.println("\nPassword Correct");
-          // Add action here (unlock door, turn on light, etc.)
+          // Action after correct password (unlock door, etc.)
         } else {
           Serial.println("\nPassword Incorrect");
         }
         enteredPassword = ""; // Reset entered password
-      }
-    }
-    else {
-      // Enter change password mode if '0' is pressed
-      if(key == '0' && enteredPassword.isEmpty()) {
-        changePasswordMode = true;
-        Serial.println("\nEnter new password followed by '#'.");
-      } else {
-        // Append the pressed key to the entered password
-        enteredPassword += key;
       }
     }
   }
