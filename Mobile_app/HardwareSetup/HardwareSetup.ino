@@ -7,7 +7,7 @@
 #define Buzzer D6
 #define GREEN D7
 #define RED D8
-//#define flameSensor D0
+#define flameSensor D0
 
 char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "Annmon"; // WiFi network name
@@ -46,7 +46,7 @@ byte colPins[COLS] = {4, 5, 6, 7}; // column pins connected to I2C module
 
 // object for matrix keypad
 Keypad_I2C customKeypad( makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS, I2CADDR); 
-String passwords[3] = {"1234", "5678", "5454"}; // Default passwords for Secret 1, 2, and 3
+String passwords[3] = {"1234", "123", "4321"}; // Default passwords for Secret 1, 2, and 3
 
 String enteredPassword;
 bool verifyMode = false; // Indicates if the system is in verification mode
@@ -74,7 +74,7 @@ void setup(){
   Serial.println("Access Point started");
   Serial.print("IP address: ");
   Serial.println(WiFi.softAPIP());
-  //pinMode(flameSensor, INPUT); // Set the flame sensor pin as an input
+  pinMode(flameSensor, INPUT); // Set the flame sensor pin as an input
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
@@ -84,10 +84,10 @@ void setup(){
   display.clearDisplay();
   display.display();
 }
-/*bool isFlameDetected() {
+bool isFlameDetected() {
   int flameDetected = digitalRead(flameSensor); // Read the flame sensor value
   return flameDetected == LOW; // Return true if flame is detected
-}*/  
+}
 void emailsetup() {
   char key = customKeypad.getKey();  // save character pressed 
 
@@ -116,13 +116,13 @@ void emailsetup() {
       checkPasswords(key);
     }
   }
-  /*if (isFlameDetected()) {
+  if (isFlameDetected()) {
     Blynk.logEvent("childhomeemail", "Door is on Fire");
     Serial.println("Flame detected!");    // Flame is detected
     display.clearDisplay();
     String text = "Door is on Fire";
     OledDisplay(text);
-  }*/
+  }
 }
 
 void verifyRandomPassword(char key) {
