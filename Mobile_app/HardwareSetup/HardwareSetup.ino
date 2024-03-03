@@ -14,7 +14,7 @@ char ssid[] = "Annmon"; // WiFi network name
 char pass[] = "childsafe"; // WiFi password
 
 #include <String.h>
-
+#include <string>
 #define I2CADDR         0x20       // matrix keypad address
 #include <ESP8266WiFi.h>
 #include <Keypad.h>               //library for matrix keypad
@@ -96,13 +96,16 @@ void emailsetup() {
       enteredPassword = "";
       Serial.println("\nEnter password:");
       display.clearDisplay();
-      char text[] = "Enter password";
+      String text = "Enter password";
       OledDisplay(text);
     } else if (key == '0' && !verifyMode && changePasswordStep == 0) {
       randomPassword = String(random(1000, 10000));
       String SecretMessage= "OTP (One time password) is " + String(randomPassword);
       Blynk.logEvent("childhomeemail", SecretMessage);
       Serial.print("\nEnter the OTP (One Time Password): ");
+      display.clearDisplay();
+      String text = "Enter the OTP (One Time Password)";
+      OledDisplay(text);
       verifyMode = true;
       enteredPassword = "";
     } else if (verifyMode) {
@@ -117,7 +120,7 @@ void emailsetup() {
     Blynk.logEvent("childhomeemail", "Door is on Fire");
     Serial.println("Flame detected!");    // Flame is detected
     display.clearDisplay();
-    char text[] = "Door is on Fire";
+    String text = "Door is on Fire";
     OledDisplay(text);
   }*/
 }
@@ -128,10 +131,16 @@ void verifyRandomPassword(char key) {
   } else {
     if (enteredPassword == randomPassword) {
       Serial.println("\nNumber Verified. Proceed to set new passwords.");
+      display.clearDisplay();
+      String text = "Number Verified. Proceed to set new passwords";
+      OledDisplay(text);
       verifyMode = false;
       changePasswordStep = 1; // Proceed to change passwords for Secret 1
     } else {
       Serial.println("\nVerification Failed. Try again.");
+      display.clearDisplay();
+      String text = "Verification Failed. Try again";
+      OledDisplay(text);
       verifyMode = false;
     }
     enteredPassword = "";
@@ -146,6 +155,9 @@ void setNewPasswords(char key) {
     Serial.print("\nNew password for Secret ");
     Serial.print(changePasswordStep);
     Serial.println(" set.");
+    display.clearDisplay();
+    String text = "New password for case" + String(changePasswordStep);
+    OledDisplay(text);
     enteredPassword = "";
     changePasswordStep++;
     if (changePasswordStep > 3) {
@@ -170,7 +182,7 @@ void checkPasswords(char key) {
         digitalWrite(Buzzer, LOW);  // Turn off buzzer
         digitalWrite(GREEN, LOW);  // Turn off green LED
         display.clearDisplay();
-        char text[] = "Correct password";
+        String text = "Correct password";
         OledDisplay(text);
       }
       if (enteredPassword == passwords[1]) {
@@ -184,7 +196,7 @@ void checkPasswords(char key) {
         digitalWrite(Buzzer, LOW);  
         digitalWrite(GREEN, LOW);
         display.clearDisplay();
-        char text[] = "Correct password";
+        String text = "Correct password";
         OledDisplay(text);  
       }
       if (enteredPassword == passwords[2]) {
@@ -200,7 +212,7 @@ void checkPasswords(char key) {
         delay(100); // Wait for 1/10 second
         digitalWrite(RED, LOW); // Red LED Off 
         display.clearDisplay();
-        char text[] = "Door Locked";
+        String text = "Door Locked";
         OledDisplay(text);
       }
 
@@ -213,7 +225,7 @@ void checkPasswords(char key) {
     enteredPassword += key;
   }
 }
-void OledDisplay(char text[]) {
+void OledDisplay(String text) {
   display.display();
   display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
@@ -263,7 +275,7 @@ void loop() {
           if (command.equals("red")) {
             digitalWrite(SolenoidLock, HIGH);
             display.clearDisplay();
-            char text[] = "Door unlocked by App";
+            String text = "Door unlocked by App";
             OledDisplay(text);
             delay(5000); // To prevent OLED ON for infinite time 
             display.clearDisplay();
@@ -273,7 +285,7 @@ void loop() {
           if (command.equals("green")) {
             digitalWrite(SolenoidLock, LOW);
             display.clearDisplay();
-            char text[] = "Door locked by App";
+            String text = "Door locked by App";
             OledDisplay(text);
             delay(5000); // To prevent OLED ON for infinite time 
             display.clearDisplay();
