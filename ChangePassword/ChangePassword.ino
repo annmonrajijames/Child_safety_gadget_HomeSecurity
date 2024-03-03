@@ -19,8 +19,9 @@ byte colPins[COLS] = {D4, D5, D6};
 // Initialize the keypad
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
-String password = "1234"; // Example password
+String password = "1234"; // Default password
 String enteredPassword;
+bool changePasswordMode = false;
 
 void setup(){
   Serial.begin(9600);
@@ -29,20 +30,40 @@ void setup(){
 void loop(){
   char key = keypad.getKey();
 
-  // If a key is pressed, append it to the enteredPassword
   if (key != NO_KEY){
     Serial.print(key);
-    enteredPassword += key;
-
-    // Check if the entered password is correct after reaching the password length
-    if (enteredPassword.length() == password.length()) {
-      if (enteredPassword == password) {
-        Serial.println("\nPassword Correct");
-        // Add actions here (unlock door, turn on light, etc.)
+    
+    // Check if we're in change password mode
+    if(changePasswordMode) {
+      // If '#' is pressed, save the new password and exit change password mode
+      if(key == '#') {
+        password = enteredPassword;
+        changePasswordMode = false;
+        Serial.println("\nNew password set.");
+        enteredPassword = ""; // Reset for next password entry
       } else {
-        Serial.println("\nPassword Incorrect");
+        // Append the pressed key to the new password
+        enteredPassword += key;
       }
-      enteredPassword = ""; // Reset entered password after each attempt
+    } else {
+      // If '0' is pressed, enable change password mode
+      if(key == '0') {
+        changePasswordMode = true;
+        enteredPassword = ""; // Reset to start new password entry
+        Serial.println("\nEnter new password followed by '#'.");
+      } else {
+        // Normal password checking
+        enteredPassword += key;
+        if (enteredPassword.length() == password.length()) {
+          if (enteredPassword == password) {
+            Serial.println("\nPassword Correct");
+            // Add action here (unlock door, turn on light, etc.)
+          } else {
+            Serial.println("\nPassword Incorrect");
+          }
+          enteredPassword = ""; // Reset entered password
+        }
+      }
     }
   }
 }
