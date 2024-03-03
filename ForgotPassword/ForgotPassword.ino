@@ -89,14 +89,20 @@ void setNewPasswords(char key) {
 void checkPasswords(char key) {
   if (key == '#') {
     bool passwordMatched = false;
-    for (int i = 0; i < 3; i++) {
-      if (enteredPassword == passwords[i]) {
-        Serial.print("\nPassword Correct- Secret ");
-        Serial.println(i + 1);
+
+      if (enteredPassword == passwords[0]) {
+        Serial.print("\nPassword Correct- Secret 1");
         passwordMatched = true;
-        break;
       }
-    }
+      if (enteredPassword == passwords[1]) {
+        Serial.print("\nPassword Correct- Secret 2");
+        passwordMatched = true;
+      }
+      if (enteredPassword == passwords[2]) {
+        Serial.print("\nPassword Correct- Secret 3");
+        passwordMatched = true;
+      }
+
     if (!passwordMatched) {
       Serial.println("\nPassword Incorrect");
     }
