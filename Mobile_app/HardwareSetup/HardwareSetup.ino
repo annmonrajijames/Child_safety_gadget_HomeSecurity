@@ -7,7 +7,7 @@
 #define Buzzer D6
 #define GREEN D7
 #define RED D8
-#define flameSensor D0
+//#define flameSensor D0
 
 char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "Annmon"; // WiFi network name
@@ -68,7 +68,7 @@ void setup(){
   Serial.println("Access Point started");
   Serial.print("IP address: ");
   Serial.println(WiFi.softAPIP());
-  pinMode(flameSensor, INPUT); // Set the flame sensor pin as an input
+  //pinMode(flameSensor, INPUT); // Set the flame sensor pin as an input
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
@@ -79,7 +79,7 @@ void setup(){
   display.display();
 }
 bool isFlameDetected() {
-  int flameDetected = digitalRead(flameSensor); // Read the flame sensor value
+  //int flameDetected = digitalRead(flameSensor); // Read the flame sensor value
   return flameDetected == LOW; // Return true if flame is detected
 }  
 void emailsetup() {
