@@ -32,6 +32,28 @@ May develop this in the future, because we did not gave importance to lock from 
 For this, we were working on MCP23017 IO Expander, but it showed up error, when we tried ot integrate push button. Integration of LED worked 
 Current status- INCOMPLETE !
 
+## Hardware components used
+Boards
+1. ESP8266 microcontroller (The brain of the Project except camera project)
+2. ESP32Cam microcontroller (The brain of the only Camera project)
+Inputs
+3. 4*4 keypad (Where user interact with the device to enter password)
+4. Fire sensor (Detects fire)
+5. IR sensor (Detects user presence near the keypad and will send pictures after detection)
+Outputs
+6. OLED display (To display the message so that the user can see)
+7. RGB Led (Indication based on password entry:- GREEN=Correct; RED=Incorrect)
+8. Buzzer (Indication based on password entry:- LONG BEEP=Correct; SHORT FREQUENT BEEP=Incorrect)
+Other ICs
+9. PCF8574 (An Input/Output expander which overcomes the limited I/O pins in ESP8266)
+10. LM7805 (Voltage regulator that takes 12 Volts as inputs and converts to 5 volts)
+Miscellaneous
+11. 5 Volt 1-channel relay (For solenoid lock)
+12. Solenoid lock (To lock or unlock the door)
+13. 12 Volt adapter (Power source for the entire project)
+14. Breadboard (For Beginner's level prototyping to facilitate connections)
+15. Jumperwires (For Beginner's level prototyping to connect components)
+
 # Development steps for child safety 1.0
 
 
