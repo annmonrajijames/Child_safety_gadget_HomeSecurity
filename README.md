@@ -24,6 +24,9 @@ Created a simple dedicated mobile app for this hardware oriented project, Now th
 Android Studio IDE is used. Java programming language and XML markup language were used in this project. 
 Using the IP address of this NodeMCU (ESP8266), was able to successfully integrate the mobile app with the hardware. 
 
+## child safety gadget 5.0
+Had set up 
+
 ## Child safety 5.0 (lock from inside)- OPTIONAL
 May develop this in the future, because we did not gave importance to lock from inside as it will increase the cost where no benifits can be there from a child's perspective, where the lock can be lock manually from inside. 
 For this, we were working on MCP23017 IO Expander, but it showed up error, when we tried ot integrate push button. Integration of LED worked 
@@ -65,6 +68,29 @@ The code snippet that you copied before can be pasted here (Circled Red)
 
 Don't forget to add the automatically generated "Event code" in the code file, This will activate the specific IoT functionality to trigger. (Circled Red)
 ![Alt text](Resources/Code_BlynkLogEvent-1.png)
+
+### Setting up notification sound for only for the emails from this device
+To set a specific ringtone for emails coming from a particular email ID in Gmail, you would generally need to use a combination of Gmail's filtering features and your mobile device's notification settings. Gmail itself does not directly support setting custom ringtones for specific email addresses, but you can achieve a similar effect by creating a filter to label emails from the specific sender and then adjusting your phone's notification settings for Gmail to only notify you for emails with that label. Here's a general approach:
+
+### Step 1: Create a Filter in Gmail for the Specific Email ID
+
+1. **Open Gmail:** Log in to your Gmail account on a computer.
+2. **Search for the Email:** Use the search bar at the top to search for emails from the specific email address.
+3. **Create a Filter:** Click on the small arrow on the right side of the search bar to open the advanced search box. Enter the specific email address in the "From" field. Then, click on "Create filter" at the bottom of the search window.
+4. **Choose Filter Actions:** Select "Apply the label" and choose a new label (you might need to create a new one specifically for this purpose, e.g., "Important Sender"). You can also choose other actions, but applying a label is crucial for this purpose. Click "Create filter" to finalize.
+
+### Step 2: Adjust Notification Settings on Your Mobile Device
+
+1. Open Gmail: Log in to your Gmail account on a computer.
+2. Search for the Email: Use the search bar at the top to search for emails from the specific email address.
+3. Create a Filter: Click on the small arrow on the right side of the search bar to open the advanced search box. Enter the specific email address in the "From" field. Then, click on "Create filter" at the bottom of the search window.
+4. Choose Filter Actions: Select "Apply the label" and choose a new label (you might need to create a new one specifically for this purpose, e.g., "Important Sender"). You can also choose other actions, but applying a label is crucial for this purpose. Click "Create filter" to finalize.
+For Android:
+1. **Open Gmail App:** Go to your Gmail app.
+2. **Go to Settings:** Tap on the menu (three horizontal lines), scroll down, and select "Settings."
+3. **Select Your Account:** Choose the email account you've applied the filter to.
+4. **Manage Labels:** Find and tap on "Manage labels" and then select the label you created for the specific sender.
+5. **Adjust Notifications:** You can set custom notifications for this label, including the ringtone. Ensure that notifications are enabled for this label.
 
 References
 1. https://github.com/Tech-Trends-Shameer/Esp-8266-Projects/blob/main/Theft-Alert-Notification-Using-Blynk-IOT/theft-alert-notification-using-blynk-iot-and-esp8266.ino To know how the codng part for Blynk IoT works
