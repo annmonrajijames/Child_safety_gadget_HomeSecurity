@@ -227,6 +227,17 @@ In this Project, the COM terminal is connected to the positive terminal of your 
 NC (Normally Closed) terminal is the opposite of NO. It represents a contact that is closed (i.e., there is an electrical connection) when the relay is not energized. When the relay is activated, this contact opens, breaking the current flow. \
 In this Project: Haven't used the NC terminal in this setup. If it were used, the solenoid lock would be unlocked by default and would only lock when the relay was energized.
 
+# Development steps for child safety 4.0
+
+In child safety 4.0, Android mobile app is integrated with the existing hardware module. \
+To develop android app, Java programming language and XML embedded language is used.
+The purpose of the Android mobile app is for two main reasons:- \ a. Child safety 2.0 uses Google drive to store captured images. And the captured images are stored in a particular folder among many if other folders are there in one's Google drive app. It will be difficult for the user to find the particular folder which contains all the images captured by the device and for that a dedicated mobile app is built. In this app, the user can click on captured images button to view all images by the gadget. This app only shows that particular folder's images. \ b. Child safety 3.0 uses door lock mechanism. There can be very rare cases that the hardware especially the keypad get damaged if the user uses it for long time like after pressing keys for many times on regular basis. And access to the door is very important for the user, and for the safety and as an alternative option the user can lock or unlock the mobile app using this Android app. \
+Softwares used:- Android Studio (Java and XML)
+
+References \
+https://youtu.be/8gGgsMe5dKQ?list=PLcDb_G2hdBvaPMKPxnzjV6WSQKCYFU15N
+https://github.com/Javlon3002/twoWayCommunicaitonAndroidAPP
+
 # FAQs to this project's idea
 1. What makes this child safety gadget innovative? \
 The gadget introduces a novel pseudo passcode feature and timely parent notifications, making it an affordable solution for ensuring children's safety, so the Pseudo passcode concept with the acknowledgement whether child reached home on time and it is CHEAP.
