@@ -16,21 +16,17 @@ Child safety gadget 2.0, brings camera feature to the device where it will take 
 The components used in this project are ESP32CAM, IR sensor, FTDI232 (only while uploading the code), Jumper wires and Breadboard.
 
 ## Child safety gadget 3.0
-Door lock is added to the existing child safety gadget, which makes part of Home Security. 
-Door will be opened if either correct password OR pseudo-password is entered, To lock the door reverse password of correct password can be entered. For wrong password, nothing will happen.
+Child safety 3.0, Door lock is added to the existing child safety gadget, which makes part of Home Security. 
+Door will be opened if either correct password OR pseudo-password is entered, To lock the door another password can be entered. For wrong password, nothing will happen.
 
 ## child safety gadget 4.0 
-Created a simple dedicated mobile app for this hardware oriented project, Now the user can lock or unlock the door using mobile app. 
+Child safety 4.0, Created a simple dedicated mobile app for this hardware oriented project, Now the user can lock or unlock the door using mobile app which would be userful if the keypad got damaged in rare cases. Also in the mobile app, Users now can see the pictures received in the Google drive through the mobile app. 
+Using the IP address of this NodeMCU (ESP8266), was able to successfully integrate the mobile app with the hardware for door lock. For the Google drive, the folder's shared link which contains the captured images is added to the app, so the user can access it through the mobile app. 
 Android Studio IDE is used. Java programming language and XML markup language were used in this project. 
-Using the IP address of this NodeMCU (ESP8266), was able to successfully integrate the mobile app with the hardware. 
 
 ## child safety gadget 5.0
-Had set up 
-
-## Child safety 5.0 (lock from inside)- OPTIONAL
-May develop this in the future, because we did not gave importance to lock from inside as it will increase the cost where no benifits can be there from a child's perspective, where the lock can be lock manually from inside. 
-For this, we were working on MCP23017 IO Expander, but it showed up error, when we tried ot integrate push button. Integration of LED worked 
-Current status- INCOMPLETE !
+Child safety 5.0, since the Input/Output pins of the ESP8266 microcontroller are used up, an Input/Output expander called PCF8574 is introduced, now this project can be expander for home security be adding extra features for the future. Currently, a fire sensor and a buzzer are added. And the keypad connection is changed, where it was connected previously with microcontroller ESP8266 to Input/Output expander PCF8574.  
+Components used:- PCF8574, Fire sensor, Buzzer
 
 ## Hardware components used
 Boards
