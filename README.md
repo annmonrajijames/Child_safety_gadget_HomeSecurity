@@ -264,3 +264,44 @@ LED Worked, but integration of push button failed.
 This is the error it is showing. 
 
 ![alt text](a2328854-d43c-4792-9282-a46c5232f0ef.jpg)
+
+
+FAQs to this project's idea
+
+1. What is the novelty in this child safety gadget?
+Pseudo passcode concept with the acknowledgement whether child reached home on time and it is CHEAP.
+2. What is pseudo passcode?
+Outside, the device will displays correct password as if the passcode entered is correct, but it will send an SOS email to parents. This is used when the child gets forced by the perpetrator. 
+3. What if the criminal abducts the child AFTER the child reached home safely?
+This device primarily enhances safety by alerting parents when their child arrives home and enabling an SOS feature under duress. While it doesn't prevent abduction scenarios after the child's safe arrival, it serves as an early alert system, providing crucial information for parents to act swiftly. Its main purpose is to monitor and communicate a child's safety status upon arriving home. Also camera may give some evidences related to the abductor. This device is all about the time gap, and the chance for the parents to ACT QUICKLY and won't help the child to save from abduction. 
+Parents may reach their home late maybe around 7-8 PM, whereas the child reaches home from school around 4 PM. So if the parents came to know their child got kidnapped when they arrived, it is more dangerous and less hope because it's being hours since the child got kidnapped. But if this device is there, the parents will know that their child got kidnapped or not reached home withing minutes as they know the child should reach home around 4 PM. 
+4. What if child forgets the passcode ?
+The daily routine and capabilities of school-going children can rarely makes the child forget password. Establishing a protocol for rare instances, like forgetting the passcode, involving neighbors or immediate contact by parents, ensures a balance between independence for the child and safety measures. This proactive planning enhances the system's reliability and user trust.
+5. What if criminal forces the child to enter correct password to fool parents.
+USE Pseudo passcode, 
+Yeah, criminal will threaten child before the child entering into his home, so he can attack later.
+And CAMERA is also there.
+6. Where is the Camera located?
+Camera is placed in a way, that the child interacting with the device can be seen.
+7. How camera is activated?
+An IR sensor is placed near or in the keypad so it will take picture when child enters the passcode.
+8. How to reset passcode?
+Press C in the keypad, then an OTP will be sent to email, enter the OTP in the keypad, if the OTP is correct, then the user can set new password for three cases- 1. Correct password; 2. Pseudo-password; 3. To lock the door - Where they should after leaving the house. 
+9. What if Internet is not there?
+In Blynk app, you will see OFFLINE or ONLINE
+10. Why mobile app?
+A. Locking and unlocking the door can be also done using the app, what if the keypad got damaged, there is a very less chance the hardware like keypad may get damaged. 
+B. Integrated Google drive's that particular folder in the app, it is difficult to find the particular folder to see the captured images, this app will only show that particular folder's content through the app which will make the user access easy. 
+11. Why not video instead of picture?
+Because as parents, I think they only need the snap of the child instead of the full video, full video can be difficult for the user to find the timeline of the video. Also it will save data storage.
+12. What about GPS based tracking?
+Battery requirement, not reliable because it can be damaged easily when it is in Kids hand, can fool by sticking behind the bus etc. This child safety gadget device ensures child reached home safely on time. 
+13. The Child can use phone to let parents know ?
+It is impractical to call or text every single day at that time(4:00PM), hard to do, maybe they forget, what if low battery in mobile. And parents won't trust mobile in kids hands. 
+14. If there is camera then what is the use of this project?
+Imagine, when the perpetrator is there with the child, and the perpetrators forces the child to enter the correct password to make the front door open so to make the child come out of the house after entering correct password, during this time the perpetrator made plan not to go near the door area of the house where there is camera. If the pseudo passcode is there, this problem will be solved. 
+This project's child safety 1.0 version does not comes with camera and this makes it more cheap and affordable, especially to rural villages. As the child can be kidnapped from the back side of the door. So adding two cameras will make it more expensive. 
+Also the perpetrator, can out smart camera by entering from other side of the house where there is no camera by threatening the child to come outside. But if there is pseudo passcode concept then all these case scenarios can be solved. It promises the safety of the child.
+15. What if there are two siblings, one child reaches around 4:00 PM and another child reaches around 5:00 PM, how would the parents know that their both children reached home safely?
+I think, you don't need to make it complicated by adding different set of passcodes for another child.
+If the first child reaches home and interacted then it will send email to parents. The second child can enter the same passcode again, assuming the first child understands the importance of the device and safety and does not enter the same passcode again during the time when second child comes. Also the first child can contact parents immediately if the second child does not reaches home on that particular time. If the first child understands the reality and behave accoringly then this will not be an issue.
