@@ -227,48 +227,7 @@ In this Project, the COM terminal is connected to the positive terminal of your 
 NC (Normally Closed) terminal is the opposite of NO. It represents a contact that is closed (i.e., there is an electrical connection) when the relay is not energized. When the relay is activated, this contact opens, breaking the current flow. \
 In this Project: Haven't used the NC terminal in this setup. If it were used, the solenoid lock would be unlocked by default and would only lock when the relay was energized.
 
-## Child safety 5.0 (lock from inside) 
-
-## Setting up I/O expander
-
-For that MCP23017
-
-Pin configuration of MCP23017
-
-![Alt text](Resources/PinConfig_MCP23017.png)
-
-MCP23017 <--> ESP8266 hardware connection => \
-VDD <--> 3v3 \
-VSS <--> GND \
-SCL <--> D1 (GPIO5) \
-SDA <--> D2 (GPIO4) \
-A0  <--> GND \
-A1  <--> GND \
-A2  <--> GND 
-RESET <--> 3V3
-
-Let's start with most simple way to test whether ESP8266 and MCP23017 are able to communicate so for that, let's test with an LED. 
-Let's choose one I/O pin like GPA0 (Pin 21) and connect it to the longer terminal of LED and the shorter terminal of LED is connected to the ground.  
-
-![alt text](Resources/MCPPIN.png)
-
-Look at the below image- which will make software easy. 
-![alt text](Resources/MCP23017_Hardware.jpeg)
-
-LED integration with MCP23017-Testing purpose. 
-![alt text](Resources/MCP_LED.jpg)
-References
-https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library, this is the library used for MCP23017
-
-### ERROR
-LED Worked, but integration of push button failed. 
-This is the error it is showing. 
-
-![alt text](Resources/ERROR_PushButton.jpg)
-
-
-FAQs to this project's idea
-
+# FAQs to this project's idea
 1. What makes this child safety gadget innovative?
 The gadget introduces a novel pseudo passcode feature and timely parent notifications, making it an affordable solution for ensuring children's safety, so the Pseudo passcode concept with the acknowledgement whether child reached home on time and it is CHEAP.
 2. How does the pseudo passcode work?
