@@ -7,6 +7,8 @@ The novel element of this project is the "PSEUDO-PASSCODE" concept, where the pe
 > child safety gadget 3.0 - The lock module\
 > child safety gadget 4.0 - The dedicated mobile app
 
+The Child Safety Gadget is an innovative project designed to enhance home security and child safety. It features a pseudo-passcode system for emergency situations, enabling discreet alerts to parents. Version 1.0 is budget-friendly, making it accessible for broader communities, including rural areas. The gadget evolves through versions, adding functionalities like a camera in 2.0 for visual confirmation, and a mobile app in 4.0 for remote access and viewing captured images. Version 5.0 introduces an I/O expander and additional sensors, further broadening the system's capabilities. The project addresses various scenarios, including forgetting passcodes and handling potential abductions, emphasizing quick parent response and the importance of security education for children.
+
 ## Child safety gadget 1.0
 Child safety gadget 1.0 is a device, to provide acknowledgement to parents through email to notify that child reached home after the child enters correct password on the keypad, and the led will blink green light and an email will be sent to parents mobile. If the password is wrong, wrong passcode entered email will be sent and red led will blink. The child can enter a pseudo-passcode which is a different password if the child feels threatened and this will send an SOS email to parents but the device will blink green light to fool the criminal to believe that the child entered the correct passcode. 
 The components of project are ES8266 microcontroller, Keypad, RGB Led light, Jumper wires. IoT platform Blynk 2.0 is also used. 
