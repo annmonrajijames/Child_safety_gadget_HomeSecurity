@@ -31,26 +31,27 @@ Child safety 5.0, since the Input/Output pins of the ESP8266 microcontroller are
 Components used:- PCF8574, Fire sensor, Buzzer
 
 ## Hardware components used
-Boards
+#### Boards 
 1. ESP8266 microcontroller (The brain of the Project except camera project)
 2. ESP32Cam microcontroller (The brain of the only Camera project)
-Inputs
+#### Inputs
 3. 4*4 keypad (Where user interact with the device to enter password)
 4. Fire sensor (Detects fire)
 5. IR sensor (Detects user presence near the keypad and will send pictures after detection)
-Outputs
+#### Outputs
 6. OLED display (To display the message so that the user can see)
 7. RGB Led (Indication based on password entry:- GREEN=Correct; RED=Incorrect)
 8. Buzzer (Indication based on password entry:- LONG BEEP=Correct; SHORT FREQUENT BEEP=Incorrect)
-Other ICs
+#### Other ICs
 9. PCF8574 (An Input/Output expander which overcomes the limited I/O pins in ESP8266)
 10. LM7805 (Voltage regulator that takes 12 Volts as inputs and converts to 5 volts)
-Miscellaneous
+#### Miscellaneous
 11. 5 Volt 1-channel relay (For solenoid lock)
 12. Solenoid lock (To lock or unlock the door)
 13. 12 Volt adapter (Power source for the entire project)
 14. Breadboard (For Beginner's level prototyping to facilitate connections)
 15. Jumperwires (For Beginner's level prototyping to connect components)
+16. FTDI232 (Only while flashing the code to ESP32CAM)
 
 # Development steps for child safety 1.0
 
@@ -249,15 +250,13 @@ RESET <--> 3V3
 Let's start with most simple way to test whether ESP8266 and MCP23017 are able to communicate so for that, let's test with an LED. 
 Let's choose one I/O pin like GPA0 (Pin 21) and connect it to the longer terminal of LED and the shorter terminal of LED is connected to the ground.  
 
-![alt text](image.png)
+![alt text](Resources/MCPPIN.png)
 
 Look at the below image- which will make software easy. 
-![alt text](MCP23017_Hardware.jpeg)
+![alt text](Resources/MCP23017_Hardware.jpeg)
 
 LED integration with MCP23017-Testing purpose. 
-![alt text](f140955b-316c-44f4-b8e7-e13d9bed21af.jpg)
-![alt text](aafb7cb5-b590-4375-8fcb-eec4ceb6921d.jpg)
-
+![alt text](Resources/MCP_LED.jpg)
 References
 https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library, this is the library used for MCP23017
 
@@ -265,7 +264,7 @@ https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library, this is the libra
 LED Worked, but integration of push button failed. 
 This is the error it is showing. 
 
-![alt text](a2328854-d43c-4792-9282-a46c5232f0ef.jpg)
+![alt text](Resources/ERROR_PushButton.jpg)
 
 
 FAQs to this project's idea
