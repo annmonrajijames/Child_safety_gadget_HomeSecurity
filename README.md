@@ -268,7 +268,7 @@ The user first should create a account, then login to the mobile app, if the log
 Find the IP address of the ESP8266.
 To find the IP address, you may use this code file given in the above link in the reference 4.3 and then run it in ESP8266
 
-![alt text](ChangeIPaddressAndroidApp.png)
+![alt text](Resources/ChangeIPaddressAndroidApp.png)
 Change to the IP addess of your ESP8266. For that download the You_Tube_WIFI_APP from the link given in the reference 4.1. Since this is the beginning, start this using simple LED to check whether the interface with the hardware and mobile app is working. If it worked, then you move onto next procedure to set up the mobile app's login and account creation. 
 
 <img src="Resources/TestLED_MobileApp.jpg" width="100" /> <img src="Resources/DoorLock_MobApp.jpg" width="100" />\
@@ -321,15 +321,16 @@ P5 <--> COL2 \
 P6 <--> COL3 \
 P7 <--> COL4 \
 ![alt text](Resources/4X4KeypadPCF8574.jpg)
-Connection set up of OLED display <--> ESP8266
+Connection set up of OLED display <--> ESP8266 \
 SCL <--> SCL \
 SDA <--> SDA \
 VCC <--> VCC \
 GND <--> GND \
+![alt text](Resources/OLEDdisplay.jpg) 
 In ESP8266, pins D1=SCL and D2=SDA. 
 What is I2C here ? \
 I2C (Inter-Integrated Circuit) is a communication protocol used to connect low-speed devices like microcontrollers, sensors, and displays in a two-wire interface (SDA for data and SCL for clock). It allows multiple devices to be connected to the same bus, enabling communication with each device through unique addresses, making it efficient for managing multiple peripherals with minimal wiring.
-![alt text](Resources/OLEDdisplay.jpg) \
+![alt text](Resources/OLEDDisplay_Test.jpg)
 
 Fire Sensor interface with ESP8266 \
 VCC <--> VCC \
@@ -345,7 +346,6 @@ LM7805 Voltage regulator is used because in this project, we will only use one 1
 ### Setting up Power supply
 ![VoltageRegulator](Resources/LM7805.png) \
 LM7805 has three pins. If it's front side is faced, then the left end terminal will accept 12 Volt as input and the right end terminal will give 5 Volt as output. The middle terminal is the ground. \
-
 
 # FAQs to this project's idea
 1. What makes this child safety gadget innovative? \
