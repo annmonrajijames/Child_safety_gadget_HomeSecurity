@@ -235,8 +235,41 @@ The purpose of the Android mobile app is for two main reasons:- \ a. Child safet
 Softwares used:- Android Studio (Java and XML)
 
 References \
-https://youtu.be/8gGgsMe5dKQ?list=PLcDb_G2hdBvaPMKPxnzjV6WSQKCYFU15N
-https://github.com/Javlon3002/twoWayCommunicaitonAndroidAPP
+4.1 https://youtu.be/8gGgsMe5dKQ?list=PLcDb_G2hdBvaPMKPxnzjV6WSQKCYFU15N
+4.2 https://github.com/Javlon3002/twoWayCommunicaitonAndroidAPP
+4.3 https://github.com/annmonrajijames/Child_safety_gadget_HomeSecurity/tree/73344bc82aef18c751c09d72e95cf02de5922d5d/Mobile_app/HardwareSetup/IpAddress_Wifi_hotspot
+4.4 https://youtu.be/9CkpMm-n5iA
+4.5 https://github.com/annmonrajijames/Healthcare_Practice
+## Development steps for child safety 4.0
+There are three main parts here, first we have to interface Hardware with Mobile app, so for that we will start with a simple LED to test, later we will replace with door lock so that the user can lock or unlock the door using mobile app and let's called that page "Operating page". Secondly, we will create a login and account creation pages with database using SQL, this will ensure that the user can operate in the operating page after user login. Third step is to integrate the Google drive folder which has captured images in the mobile app. 
+
+How to use? \
+The user first should create a account, then login to the mobile app, if the login successful, then it will navigate to "Home Page", in home page there are two buttons, one is door lock and the the other is captured images. To control the door lock, go to the door lock button and it see images go to Captured images button. 
+
+Find the IP address of the ESP8266.
+To find the IP address, you may use this code file given in the above link in the reference 4.3 and then run it in ESP8266
+
+![alt text](ChangeIPaddressAndroidApp.png)
+Change to the IP addess of your ESP8266. For that download the You_Tube_WIFI_APP from the link given in the reference 4.1. Since this is the beginning, start this using simple LED to check whether the interface with the hardware and mobile app is working. If it worked, then you move onto next procedure to set up the mobile app's login and account creation. 
+![alt text](TestLED_MobileApp.jpg)
+
+To integrate login & account creation pages
+In AndroidManifest.xml, change the .MainActivity exported as false and rename the file name if needed. 
+android:exported="true" is for the page that comes first when the app is opened. In this case, .LoginActivity is the page which should be set like this.
+For account basic user login process, it should have these files:-
+LoginActivity.java and it's corresponding xml file
+RegisterActivity.java and it's corresponding xml file
+Database.java for storing datas
+HomeActivity.java and it's corresponding xml file, this page is created for later use, currently it's an empty page where the user will navigate to this page after successful login. Later we will add buttons for this page, can be used as a home page for the user. 
+Check out the reference 4.4 (YouTube video) and 4.5 (GitHub repository) to learn on how to set up basic user login and account creation
+Basic things to consider while making login set up for the app are:-
+1. OnClickListener:- OnClickListener is an interface in Android development that defines a callback to be invoked when a view (such as a button, text field, etc.) is clicked. When you set an OnClickListener on a view, you are telling Android what to do when that view is clicked.
+here, Getting the text from edUsername and edPassword, presumably EditText fields, and storing them in the username and password strings.
+Displaying a Toast message that says "Login Success". When you set this listener on a button using btn.setOnClickListener(...), it makes the button respond to click events by executing the code you've written in the onClick method. This pattern is widely used in Android for handling user interface events.
+2. Intent:- To navigate from one page to another.  
+Here,  startActivity(new Intent(LoginActivity.this, RegisterActivity.class)); creates an intent to navigate from LoginActivity to RegisterActivity, and then starts RegisterActivity.
+3. Cursor:- Cursor is an interface that provides random read-write access to the result set returned by a database query. The primary purpose of a Cursor is to facilitate the traversal and reading of database query results. It acts as a pointer that moves over the rows of the result set, allowing you to access data from each column of the currently pointed-to row. 
+4. SharedPreferences:- now the code not only checks the login credentials but also saves the successful login's username to SharedPreferences so that you can access it later in other parts of your application.
 
 # FAQs to this project's idea
 1. What makes this child safety gadget innovative? \
