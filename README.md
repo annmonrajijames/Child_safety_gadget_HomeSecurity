@@ -271,6 +271,11 @@ Here,  startActivity(new Intent(LoginActivity.this, RegisterActivity.class)); cr
 3. Cursor:- Cursor is an interface that provides random read-write access to the result set returned by a database query. The primary purpose of a Cursor is to facilitate the traversal and reading of database query results. It acts as a pointer that moves over the rows of the result set, allowing you to access data from each column of the currently pointed-to row. 
 4. SharedPreferences:- now the code not only checks the login credentials but also saves the successful login's username to SharedPreferences so that you can access it later in other parts of your application.
 
+After integrating login & account creation for the app, let's move onto Home page to add buttons. Add Door lock button so the user can navigate to the operating page to lock or unlock the door using Android Studio IDE. In hardware part for the app, change the code accordinly to make the door lock works instead of LED using Arduino IDE. 
+Using Arduino IDE, you have to mix the existing code of email setup using Blynk and Solenoid lock code with the LED using app hardware code. 
+
+Let's go to create next button for Google drive integration with the mobile app. For that you have to set user permission in AndroidManifest.xml and also set the URL of the google drive's particular folder using Adnroid Studio. 
+
 # FAQs to this project's idea
 1. What makes this child safety gadget innovative? \
 The gadget introduces a novel pseudo passcode feature and timely parent notifications, making it an affordable solution for ensuring children's safety, so the Pseudo passcode concept with the acknowledgement whether child reached home on time and it is CHEAP.
