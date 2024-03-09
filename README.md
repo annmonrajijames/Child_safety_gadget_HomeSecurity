@@ -304,6 +304,10 @@ Let's go to create next button for Google drive integration with the mobile app.
 
 # Development steps for child safety 5.0
 
+References \
+5.1 https://youtu.be/tGfPhHPaHQo
+5.2 https://drive.google.com/drive/folders/1MTmzQXJQrrw97AING47bJaT2kvvm8maH
+
 In child safety 5.0, the project has set up in a way for future expansion to more Home Security components like Sensors, displays etc. The challenge of limited input/output pins of the ESP8266 has overcame by introducing an Input/Output expander IC called PCF8574. \
 Thanks to PCF8574, this project now was able to add more components like OLED display, Buzzer, Fire Sensor and also was able to replace previous 4×3 keypad with 4×4 keypad. \
 In this project, 4×4 keypad is interfaced with PCF8574 's input/output pins. \
@@ -335,6 +339,13 @@ D0  <--> D0 (can connect to any I/O pins of ESP8266) \
 Buzzer interface with ESP8266 \
 Longer pin (+ve pin or anode)    <--> D6 (can connect to any I/O pins of ESP8266) \
 Shorter pin (-ve pin or cathode) <--> GND
+
+# Power Supply
+LM7805 Voltage regulator is used because in this project, we will only use one 12 volt adapter. 12 Volt power supply is required for Solenoid lock and 5 Volt supply is required for microcontrollers and other components. If the power supply given to the microcontroller is 12 Volts then the microcontroller will get damaged so to avoid this issue LM7805 voltage regulator can be used. \
+### Setting up Power supply
+![VoltageRegulator](Resources/LM7805.png) \
+LM7805 has three pins. If it's front side is faced, then the left end terminal will accept 12 Volt as input and the right end terminal will give 5 Volt as output. The middle terminal is the ground. \
+
 
 # FAQs to this project's idea
 1. What makes this child safety gadget innovative? \
