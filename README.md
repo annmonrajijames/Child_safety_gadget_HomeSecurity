@@ -5,12 +5,13 @@ The novel element of this project is the "PSEUDO-PASSCODE" concept, where the pe
 > child safety gadget 1.0 - The password mechanism module\
 > child safety gadget 2.0 - The Camera module\
 > child safety gadget 3.0 - The lock module\
-> child safety gadget 4.0 - The dedicated mobile app
+> child safety gadget 4.0 - The dedicated mobile app\
+> child safety gadget 5.0 - Extra features and future expansion
 
 The Child Safety Gadget is an innovative project designed to enhance home security and child safety. It features a pseudo-passcode system for emergency situations, enabling discreet alerts to parents. Version 1.0 is budget-friendly, making it accessible for broader communities, including rural areas. The gadget evolves through versions, adding functionalities like a camera in 2.0 for visual confirmation, and a mobile app in 4.0 for remote access and viewing captured images. Version 5.0 introduces an I/O expander and additional sensors, further broadening the system's capabilities. The project addresses various scenarios, including forgetting passcodes and handling potential abductions, emphasizing quick parent response and the importance of security education for children.
 
 ## Child safety gadget 1.0
-Child safety gadget 1.0 is a device, to provide acknowledgement to parents through email to notify that child reached home after the child enters correct password on the keypad, and the led will blink green light and an email will be sent to parents mobile. If the password is wrong, wrong passcode entered email will be sent and red led will blink. The child can enter a pseudo-passcode which is a different password if the child feels threatened and this will send an SOS email to parents but the device will blink green light to fool the criminal to believe that the child entered the correct passcode. 
+Child safety gadget 1.0 is a device, to provide acknowledgement to parents through email to notify that child reached home after the child enters correct password on the keypad, and the led will blink green light and an email will be sent to parents mobile. If the password is wrong, wrong passcode entered email will be sent and red led will blink. The child can enter a pseudo-passcode which is a different password if the child feels threatened and this will send an SOS email to parents but the device will blink green light to fool the criminal to believe that the child entered the correct passcode. And a unique notification sound will played in parents mobile only for those emails coming from gadget. 
 The components of project are ES8266 microcontroller, Keypad, RGB Led light, Jumper wires. IoT platform Blynk 2.0 is also used. 
 
 ## Child safety gadget 2.0
@@ -20,6 +21,7 @@ The components used in this project are ESP32CAM, IR sensor, FTDI232 (only while
 ## Child safety gadget 3.0
 Child safety 3.0, Door lock is added to the existing child safety gadget, which makes part of Home Security. 
 Door will be opened if either correct password OR pseudo-password is entered, To lock the door another password can be entered. For wrong password, nothing will happen.
+Components used in this project are 5 Volt 1-channel relay, Solenoid lock, 12 Volt adapter, Jumper wires. 
 
 ## child safety gadget 4.0 
 Child safety 4.0, Created a simple dedicated mobile app for this hardware oriented project, Now the user can lock or unlock the door using mobile app which would be userful if the keypad got damaged in rare cases. Also in the mobile app, Users now can see the pictures received in the Google drive through the mobile app. 
@@ -27,8 +29,12 @@ Using the IP address of this NodeMCU (ESP8266), was able to successfully integra
 Android Studio IDE is used. Java programming language and XML markup language were used in this project. 
 
 ## child safety gadget 5.0
-Child safety 5.0, since the Input/Output pins of the ESP8266 microcontroller are used up, an Input/Output expander called PCF8574 is introduced, now this project can be expander for home security be adding extra features for the future. Currently, a fire sensor and a buzzer are added. And the keypad connection is changed, where it was connected previously with microcontroller ESP8266 to Input/Output expander PCF8574.  
-Components used:- PCF8574, Fire sensor, Buzzer
+Child safety 5.0, since the Input/Output pins of the ESP8266 microcontroller are used up, an Input/Output expander called PCF8574 is introduced, now this project can be expander for home security be adding extra features for the future. Currently, OLED display, fire sensor, buzzer are added. And the keypad connection is changed, where it was connected previously with microcontroller ESP8266 to Input/Output expander PCF8574. Here, OLED display is used to display the message to the person interacting with the device, this is important as earlier only LED was used to indicate the message whether password is correct or wrong. \
+Forget Password through hardware \
+Thanks to OLED display, now it will be possible for the user to change the password if the user forgets. As the user can see the steps through display to complete the procedures for changing password. If the user press 'C' in the keypad then a randomly generated number called OTP(One Time password) will be sent to user's email id. After the user enters the OTP, then the user is allowed to change the password for three passwords. a. For correct password b. For Pseudo-password c. To lock the door.  \
+Buzzer will also give indication whether password is correct or not like RGB LED. \
+Fire sensor will detect and send an email, if the house is on fire. 
+Components used:- 4*4 Keypad, OLED display, PCF8574, Fire sensor, Buzzer
 
 ## Hardware components used
 #### Boards 
@@ -240,7 +246,7 @@ References \
 4.3 https://github.com/annmonrajijames/Child_safety_gadget_HomeSecurity/tree/73344bc82aef18c751c09d72e95cf02de5922d5d/Mobile_app/HardwareSetup/IpAddress_Wifi_hotspot
 4.4 https://youtu.be/9CkpMm-n5iA
 4.5 https://github.com/annmonrajijames/Healthcare_Practice
-## Development steps for child safety 4.0
+
 There are three main parts here, first we have to interface Hardware with Mobile app, so for that we will start with a simple LED to test, later we will replace with door lock so that the user can lock or unlock the door using mobile app and let's called that page "Operating page". Secondly, we will create a login and account creation pages with database using SQL, this will ensure that the user can operate in the operating page after user login. Third step is to integrate the Google drive folder which has captured images in the mobile app. 
 
 How to use? \
@@ -252,9 +258,8 @@ To find the IP address, you may use this code file given in the above link in th
 ![alt text](ChangeIPaddressAndroidApp.png)
 Change to the IP addess of your ESP8266. For that download the You_Tube_WIFI_APP from the link given in the reference 4.1. Since this is the beginning, start this using simple LED to check whether the interface with the hardware and mobile app is working. If it worked, then you move onto next procedure to set up the mobile app's login and account creation. 
 
-<img src="Resources/TestLED_MobileApp.jpg" width="100" /> <img src="Resources/DoorLock_MobApp.jpg" width="100" />
-
-Change from this ---> To this
+<img src="Resources/TestLED_MobileApp.jpg" width="100" /> <img src="Resources/DoorLock_MobApp.jpg" width="100" />\
+Change from this (LED page) ---> To this (Door lock page)
 
 To integrate login & account creation pages
 In AndroidManifest.xml, change the .MainActivity exported as false and rename the file name if needed. 
@@ -283,6 +288,40 @@ After integrating login & account creation for the app, let's move onto Home pag
 Using Arduino IDE, you have to mix the existing code of email setup using Blynk and Solenoid lock code with the LED using app hardware code. 
 
 Let's go to create next button for Google drive integration with the mobile app. For that you have to set user permission in AndroidManifest.xml and also set the URL of the google drive's particular folder using Adnroid Studio. 
+
+# Development steps for child safety 5.0
+
+In child safety 5.0, the project has set up in a way for future expansion to more Home Security components like Sensors, displays etc. The challenge of limited input/output pins of the ESP8266 has overcame by introducing an Input/Output expander IC called PCF8574. \
+Thanks to PCF8574, this project now was able to add more components like OLED display, Buzzer, Fire Sensor and also was able to replace previous 4×3 keypad with 4×4 keypad. \
+In this project, 4×4 keypad is interfaced with PCF8574 's input/output pins. \
+Connection set up of 4×4 keypad <--> PCF8574 \
+P0 <--> ROW0 \
+P1 <--> ROW1 \
+P2 <--> ROW2 \
+P3 <--> ROW3 \
+P4 <--> COL1 \
+P5 <--> COL2 \
+P6 <--> COL3 \
+P7 <--> COL4 \
+![alt text](Resources/4X4KeypadPCF8574.jpg)
+Connection set up of OLED display <--> ESP8266
+SCL <--> SCL \
+SDA <--> SDA \
+VCC <--> VCC \
+GND <--> GND \
+In ESP8266, pins D1=SCL and D2=SDA. 
+What is I2C here ? \
+I2C (Inter-Integrated Circuit) is a communication protocol used to connect low-speed devices like microcontrollers, sensors, and displays in a two-wire interface (SDA for data and SCL for clock). It allows multiple devices to be connected to the same bus, enabling communication with each device through unique addresses, making it efficient for managing multiple peripherals with minimal wiring.
+![alt text](Resources/OLEDdisplay.jpg) \
+
+Fire Sensor interface with ESP8266 \
+VCC <--> VCC \
+GND <--> GND \
+D0  <--> D0 (can connect to any I/O pins of ESP8266) \
+
+Buzzer interface with ESP8266 \
+Longer pin (+ve pin or anode)    <--> D6 (can connect to any I/O pins of ESP8266) \
+Shorter pin (-ve pin or cathode) <--> GND
 
 # FAQs to this project's idea
 1. What makes this child safety gadget innovative? \
