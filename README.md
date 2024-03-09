@@ -76,6 +76,14 @@ Select the board and then upload the code, once code is written.
 
 If you completed testing the code for keypad, then NEXT STEP is configuring email using Blynk IoT platform to send emails to parents email id.
 
+### Setting up RGB LED
+![RGBLED](Resources/RGBLED.png) \
+In this picture, 'R'=Red light, 'G'=Green light, 'B'=Blue light and (+) should be connected to the Ground \
+RGB LED <--> ESP8266 \
+G  <--> D7 \
+R  <--> D8 \
+'+'<--> GND 
+
 ### Setting up Blynk (Main things to consider)
 
 Creating a template
@@ -161,7 +169,12 @@ Copy a part of the URL of the web app and paste it for the String variable myScr
 For example, here the value of myScript after pasting should be:-
 myScript= "/macros/s/AKfycbxcnqrleZjKohDYYwADWckLugt1Mr_sh-IAEcWw7TScxDNLexU/exec"
 ![Alt text](Resources/WebURL.png)
-And then upload the code, before uploading you should now how to make connect ESP32CAM to FTDI programmer so learn how to do from below heading "Connection of ESP32CAM and FTDI programmer"
+And then upload the code, before uploading you should now how to make connect ESP32CAM to FTDI programmer so learn how to do from below heading "Connection of ESP32CAM and FTDI programmer" \
+
+Connection set up of IR sensor <--> ESP32CAM \
+OUT <--> IO13 (Can be connected to any I/O pin of ESP32CAM) \
+VCC <--> VCC \
+GND <--> GND 
 
 ### Connection of ESP32CAM and FTDI programmer
 ![Alt text](Resources/image.png)
