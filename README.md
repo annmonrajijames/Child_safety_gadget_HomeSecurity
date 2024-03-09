@@ -251,7 +251,10 @@ To find the IP address, you may use this code file given in the above link in th
 
 ![alt text](ChangeIPaddressAndroidApp.png)
 Change to the IP addess of your ESP8266. For that download the You_Tube_WIFI_APP from the link given in the reference 4.1. Since this is the beginning, start this using simple LED to check whether the interface with the hardware and mobile app is working. If it worked, then you move onto next procedure to set up the mobile app's login and account creation. 
-![alt text](TestLED_MobileApp.jpg)
+
+<img src="Resources/TestLED_MobileApp.jpg" width="100" /> <img src="Resources/DoorLock_MobApp.jpg" width="100" />
+
+Change from this ---> To this
 
 To integrate login & account creation pages
 In AndroidManifest.xml, change the .MainActivity exported as false and rename the file name if needed. 
@@ -261,6 +264,11 @@ LoginActivity.java and it's corresponding xml file
 RegisterActivity.java and it's corresponding xml file
 Database.java for storing datas
 HomeActivity.java and it's corresponding xml file, this page is created for later use, currently it's an empty page where the user will navigate to this page after successful login. Later we will add buttons for this page, can be used as a home page for the user. 
+
+<img src="Resources/LoginPage.jpeg" width="100" /> <img src="Resources/RegisterPage.jpeg" width="100" /> <img src="Resources/HomePage.jpeg" width="100" /> <img src="Resources/DoorLock_MobApp.jpg" width="100" /> <img src="Resources/GoogleDrivePage.jpeg" width="100" />
+
+Login page | Register page | Home page | Door lock page | Google drive page 
+
 Check out the reference 4.4 (YouTube video) and 4.5 (GitHub repository) to learn on how to set up basic user login and account creation
 Basic things to consider while making login set up for the app are:-
 1. OnClickListener:- OnClickListener is an interface in Android development that defines a callback to be invoked when a view (such as a button, text field, etc.) is clicked. When you set an OnClickListener on a view, you are telling Android what to do when that view is clicked.
