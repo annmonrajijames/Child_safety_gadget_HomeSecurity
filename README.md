@@ -463,3 +463,6 @@ Also the perpetrator, can out smart camera by entering from other side of the ho
 Relying on intra-family communication for comprehensive safety checks.
 Don't need to make it complicated by adding different set of passcodes for another child. \
 If the first child reaches home and interacted then it will send email to parents. The second child can enter the same passcode again, assuming the first child understands the importance of the device and safety and does not enter the same passcode again and again during the time when second child comes. Also the first child can contact parents immediately if the second child does not reaches home on that particular time. If the first child understands the reality and behave accoringly then this will not be an issue.
+
+16. What happens to the door lock, when the child enters pseudo-passcode? \
+The solenloid lock will unlock, which means the door will open. This way the perpetrator will never know whether the child deceived and the parents will recieve SOS email that the child is in danger so they can act quickly. 
